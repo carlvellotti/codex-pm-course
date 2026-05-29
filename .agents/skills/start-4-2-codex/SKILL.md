@@ -6,7 +6,7 @@ description: |
 
 ## Setup
 
-At the start of this lesson, silently copy the bundled lesson support files into the workspace if they are not already present. Do not show command output to the student.
+At the start of this lesson, copy the bundled lesson support files into the workspace if they are not already present. Briefly tell the student what files are available if you mention them during the lesson.
 
 ```bash
 cp -rn .agents/skills/start-4-2-codex/assets/* . 2>/dev/null || true
@@ -40,6 +40,8 @@ USER: Yes
 
 I'm going to use a tool called structured multiple-choice question - it gives you nice buttons to pick from instead of typing. You can ask me to use this anytime you want a cleaner way to make decisions. Just say "ask me" or "give me options."
 
+If buttons don't appear in your Codex Desktop App, that's okay - I'll show numbered options and you can type your choices.
+
 Let's try it now.
 
 ACTION: Use structured multiple-choice question with two questions:
@@ -71,7 +73,7 @@ STOP: Type the numbers you want (e.g., "1, 3, 5, 8")
 
 USER: [Types numbers]
 
-ACTION: Note their selections for use in REQUIREMENTS.md
+ACTION: Note their selections for use in `quiz-project/REQUIREMENTS.md`
 
 ---
 
@@ -93,7 +95,7 @@ STOP: Which do you prefer - single recommendation (A) or show percentages (B)?
 
 USER: [Responds A or B]
 
-ACTION: Note their choice for REQUIREMENTS.md
+ACTION: Note their choice for `quiz-project/REQUIREMENTS.md`
 
 Great choice! So if someone's answers map to "Bold Adventurer" 3 times and "Cozy Classic" 2 times:
 
@@ -123,11 +125,16 @@ ACTION: Generate 3-4 HTML style preview files with different aesthetics:
 - Style 3: Bold/dramatic (dark backgrounds, high contrast, strong typography)
 - Style 4: Warm/cozy (earth tones, soft gradients, inviting feel)
 
-Each preview should show a sample quiz card with a question and answer options. Save them to the quiz-project folder as style-preview-1.html, style-preview-2.html, etc.
+Each preview should show a sample quiz card with a question and answer options. Save them to the quiz project folder as:
+
+`quiz-project/style-preview-1.html`
+`quiz-project/style-preview-2.html`
+`quiz-project/style-preview-3.html`
+`quiz-project/style-preview-4.html`
 
 ACTION: Open all preview files in the browser using browser opening if available, otherwise provide the URL for manual opening commands
 
-Take a look at those previews in your browser. Each tab is a different style.
+Take a look at those previews in your browser. Each tab is a different style. You can also inspect the files from **Files** if you want to see where they were created.
 
 STOP: Which style do you like best? You can pick one, or tell me what to mix - like "I like the colors from #2 but the layout from #3"
 
@@ -141,9 +148,9 @@ One more visual question: do you want images in your quiz?
 
 You could have a picture for each coffee result - like a photo of espresso for "Bold Adventurer."
 
-I can search the web and download images for you - but heads up, it takes a bit of time since I have to search, find good ones, and download them.
+If web access and downloads are available, I can search the web and download images for you - but heads up, it takes a bit of time since I have to search, find good ones, and download them.
 
-Alternatively, we can skip images for now and add them later once the quiz is working.
+Alternatively, we can skip images for now, use local or attached images, or add them later once the quiz is working.
 
 STOP: What do you prefer - images (takes longer) or skip for now?
 
@@ -153,11 +160,12 @@ ACTION: Based on their choice:
 
 If they want IMAGES:
 - Ask what images they want for each result (e.g., "espresso shot", "cozy latte", "iced coffee")
-- For each image:
+- If web access and downloads are available, for each image:
   1. Web search for the image (e.g., "espresso shot unsplash")
   2. Fetch a result page to find direct image URLs
-  3. Download using curl to public/ folder in quiz-project
+  3. Download using curl to `quiz-project/public/`
 - Note: Unsplash is best for stock photos (free, high quality).
+- If web access or downloads are not available, skip images for now or ask the student to attach/local-provide images later.
 
 If they want to SKIP:
 - Move on - can always add images later during iteration
@@ -172,7 +180,7 @@ STOP: Icons or no icons?
 
 USER: [Responds]
 
-ACTION: Note their choice for REQUIREMENTS.md
+ACTION: Note their choice for `quiz-project/REQUIREMENTS.md`
 
 ---
 
@@ -202,14 +210,18 @@ ACTION: Adjust questions based on feedback. If they want to write their own, hel
 
 Perfect! We've got everything we need. Let me save all of this to a requirements file.
 
-ACTION: Create REQUIREMENTS.md in the quiz-project folder with:
+ACTION: Create `quiz-project/REQUIREMENTS.md` with:
 - Personality→Coffee pairings (all selected ones with taglines)
 - Result display style (single or percentages)
 - Visual style description
 - Image/icon decision
 - All quiz questions with answer-to-personality mappings
 
-Done! Open REQUIREMENTS.md and take a look. This is the spec I'll build from.
+Done! I created:
+
+`quiz-project/REQUIREMENTS.md`
+
+Open it from **Files** and take a look. This is the spec I'll build from.
 
 STOP: Does everything look right?
 
@@ -240,7 +252,7 @@ USER: Let's build
 - The structured multiple-choice question tool should be used for the initial batched questions ONLY - after that, use regular conversation
 - When generating style previews, make them actually visually distinct - don't just change colors slightly
 - For images: Unsplash works great for stock photos, but always check the URL actually returns an image before downloading
-- The REQUIREMENTS.md file is crucial - it's the spec for 4.3. Make sure it's complete and clear.
+- The `quiz-project/REQUIREMENTS.md` file is crucial - it's the spec for 4.3. Make sure it's complete and clear.
 - If users want to mix styles, get specific about what elements from each
 - Adjust the number of questions based on their pairing count (more pairings = more questions needed to differentiate)
 
@@ -251,5 +263,5 @@ USER: Let's build
 - User has selected a visual style
 - User has made a decision on images/icons/skip
 - User has approved quiz questions
-- REQUIREMENTS.md exists with all the above documented
+- `quiz-project/REQUIREMENTS.md` exists with all the above documented
 - User is excited to build

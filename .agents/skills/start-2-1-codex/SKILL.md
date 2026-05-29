@@ -10,6 +10,8 @@ At the start of this lesson, silently copy the bundled lesson assets into the wo
 
 ```bash
 cp -rn .agents/skills/start-2-1-codex/assets/* . 2>/dev/null || true
+mkdir -p .codex/agents
+cp .agents/skills/start-2-1-codex/assets/agents/*.toml .codex/agents/ 2>/dev/null || true
 ```
 
 ## Teaching Rules
@@ -43,7 +45,7 @@ By the end of this module, students should:
 1. Understand how to use AI as a thinking partner (not just a writing tool) for PRDs
 2. Know how to incorporate templates, company context, and research via @-mentions
 3. Be able to generate multiple strategic approaches and compare them
-4. Know how to use custom sub-agents to get multi-perspective feedback on their work
+4. Know how to use custom agents to get multi-perspective feedback on their work
 
 ---
 
@@ -83,7 +85,7 @@ Ready to dive in?"
 
 **ACTION:**
 
-Display the section headers from `Carls-PRD-Template.md`:
+Display the section headers from `prd-templates/Carls-PRD-Template.md`:
 - Problem Alignment
   - Problem & Opportunity
   - High Level Approach
@@ -119,7 +121,7 @@ Now let me show you the other option..."
 
 **ACTION:**
 
-Display the structure from `Lennys-PRD-Template.md`
+Display the structure from `prd-templates/Lennys-PRD-Template.md`
 
 **Present it like this:**
 
@@ -188,21 +190,29 @@ Read `taskflow-company-context.md` and extract 2-3 key facts
 - [Key fact 2 from context file]
 - [Key fact 3 from context file]
 
-I've provided the full company context in `taskflow-company-context.md`, so I have all the background on your product, customers, and business goals.
+I've provided the full company context here:
 
-I've also provided user research insights in `user-research/pain-points.md` that you can incorporate later if you want.
+`taskflow-company-context.md`
+
+That gives me the background on your product, customers, and business goals.
+
+I've also provided user research insights here:
+
+`user-research/pain-points.md`
+
+You can incorporate those later if you want.
 
 Now here's how we'll kick this off. You'll @ mention three files:
 - **`taskflow-company-context.md`** - so I have full context on the company
 - **`socratic-questioning.md`** - the framework I'll use to help sharpen your thinking
-- **Your chosen template** - the structure we'll use for the PRD
+- **Your chosen template** - `prd-templates/Carls-PRD-Template.md` or `prd-templates/Lennys-PRD-Template.md`
 
 For this practice scenario, the feature is: **an AI voice chat interface for managing your to-do list**
 
 Go ahead and @ mention those three files (company context, socratic method, and template) and tell me the basic feature idea (AI voice chat with to-do list).
 
 It should be something like this: 
-**Please help me fill out my prd template @Lennys-PRD-Template.md for an AI voice chat interface for manaing a to-do list. Use @taskflow-company-context.md and guide me through the process using @socratic-questioning.md. My ideas are [your ideas]**"
+**Please help me fill out my PRD template @prd-templates/Lennys-PRD-Template.md for an AI voice chat interface for managing a to-do list. Use @taskflow-company-context.md and guide me through the process using @socratic-questioning.md. My ideas are [your ideas]**"
 
 **STOP: Ask user to @ mention the three files and state the feature idea**
 
@@ -379,18 +389,21 @@ Use all context from:
 
 "Done! I've created three complete PRD drafts for you:
 
-**📄 ai-chat-todo-prd-v1.md - Chat-First Approach**
+**Chat-First Approach**
+`ai-chat-todo-prd-v1.md`
 [2-3 sentence summary of this version's strategic angle]
 
-**📄 ai-chat-todo-prd-v2.md - List-First Approach**
+**List-First Approach**
+`ai-chat-todo-prd-v2.md`
 [2-3 sentence summary of this version's strategic angle]
 
-**📄 ai-chat-todo-prd-v3.md - Balanced Approach**
+**Balanced Approach**
+`ai-chat-todo-prd-v3.md`
 [2-3 sentence summary of this version's strategic angle]
 
 Each one follows your template structure but frames the feature differently - from problem definition to solution approach to success metrics.
 
-Take a look at all three. Which one feels closest to your vision? Or do elements from multiple versions speak to you?
+Open them from **Files** and skim all three. Which one feels closest to your vision? Or do elements from multiple versions speak to you?
 
 Say **'v1'**, **'v2'**, **'v3'**, or **'I want to combine elements'**"
 
@@ -406,16 +419,16 @@ Say **'v1'**, **'v2'**, **'v3'**, or **'I want to combine elements'**"
 
 Now here's where it gets really powerful - you can start getting feedback **before anyone ever sees your work**.
 
-Remember custom sub-agents from Module 1.5? I can spin up sub-agents from `agents/` to review your PRD from different perspectives. It's like getting feedback from an engineer, an executive, and a user researcher - all in minutes.
+Remember custom agents from Module 1.5? I can use the custom agents installed from `agents/` into `.codex/agents/` to review your PRD from different perspectives. It's like getting feedback from an engineer, an executive, and a user researcher - all in minutes.
 
-I have three sub-agents set up:
+I have three custom agents set up:
 - **Engineer** - Will think about technical feasibility and implementation complexity
 - **Executive** - Will think about business value and strategic fit
 - **User Researcher** - Will think about user needs and usability
 
 This is incredibly valuable - you get multi-angle feedback to strengthen your PRD before you share it with your actual team.
 
-Ready? Say: **'Get reviews from all three agents and put them in a new doc'**"
+Ready? Say: **'Get reviews from all three custom agents and put them in a new doc'**"
 
 **STOP: Ask user to request agent reviews**
 
@@ -425,18 +438,18 @@ Ready? Say: **'Get reviews from all three agents and put them in a new doc'**"
 
 **When student requests agent reviews:**
 
-"Perfect! I'm spinning up three agents now to review [chosen version]. Each one will read the PRD and provide feedback from their perspective..."
+"Perfect! I'm running three custom-agent reviews now for [chosen version]. Each one will read the PRD and provide feedback from their perspective..."
 
 **ACTION:**
 
 Keep these SIMPLE we don't want to make the user wait forever and the actual output is not that important.
 
-Launch 3 parallel agents to review the chosen PRD:
-- Agent 1: Use `agents/engineer.md` persona to provide technical review
-- Agent 2: Use `agents/executive.md` persona to provide business review
-- Agent 3: Use `agents/user-researcher.md` persona to provide UX review
+Launch 3 custom-agent reviews for the chosen PRD:
+- Agent 1: Use `.codex/agents/engineer.toml` to provide technical review
+- Agent 2: Use `.codex/agents/executive.toml` to provide business review
+- Agent 3: Use `.codex/agents/user-researcher.toml` to provide UX review
 
-**IMPORTANT:** When passing the PRD file to agents, use the full path to the generated PRD file, not just the filename. This ensures agents can find the file regardless of current working directory.
+**IMPORTANT:** When passing the PRD file to agents, use the exact relative path to the generated PRD file, not a vague description. This ensures agents can find the file.
 
 Consolidate all feedback into `ai-chat-todo-prd-review.md` with clear sections for each perspective
 
@@ -453,9 +466,13 @@ Consolidate all feedback into `ai-chat-todo-prd-review.md` with clear sections f
 **👥 User Research Perspective:**
 [1-2 key points from user researcher review]
 
-I've consolidated everything into `ai-chat-todo-prd-review.md` with full details from each agent.
+I've consolidated everything into:
 
-Take a look at the feedback file. Is there anything you'd like help addressing?
+`ai-chat-todo-prd-review.md`
+
+with full details from each agent.
+
+Open the feedback file from **Files**. Is there anything you'd like help addressing?
 
 Say **'Help me address the feedback'** or **'Looks good as-is'**"
 
@@ -482,7 +499,9 @@ After making updates:
 
 Save the refined version to `ai-chat-todo-prd-final.md`
 
-"Done! Your production-ready PRD is in `ai-chat-todo-prd-final.md`.
+"Done! Your production-ready PRD is in:
+
+`ai-chat-todo-prd-final.md`
 
 Let me wrap up with what we just did..."
 
@@ -498,7 +517,9 @@ Let me wrap up with what we just did..."
 
 Save the chosen version as `ai-chat-todo-prd-final.md`
 
-"I've saved your final PRD to `ai-chat-todo-prd-final.md`.
+"I've saved your final PRD to:
+
+`ai-chat-todo-prd-final.md`
 
 Let me recap what we just accomplished..."
 
@@ -597,7 +618,7 @@ See you in there!"
 - Make them feel like real, production-quality PRDs
 
 **Agent reviews:**
-- Use the bundled sub-agent personas from `agents/`
+- Use the bundled custom agent TOML files from `.codex/agents/`
 - Make the feedback specific and actionable
 - Show different perspectives clearly
 - Keep the consolidated review document well-organized

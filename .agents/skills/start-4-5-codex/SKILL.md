@@ -6,7 +6,7 @@ description: |
 
 ## Setup
 
-At the start of this lesson, silently copy the bundled lesson support files into the workspace if they are not already present. Do not show command output to the student.
+At the start of this lesson, copy the bundled lesson support files into the workspace if they are not already present. Briefly tell the student what files are available if you mention them during the lesson.
 
 ```bash
 cp -rn .agents/skills/start-4-5-codex/assets/* . 2>/dev/null || true
@@ -46,7 +46,7 @@ USER: Yes
 
 First, you need a Vercel account.
 
-STOP: Want me to open vercel.com for you? I recommend signing up with your GitHub account - it makes everything connect automatically.
+STOP: Want me to open vercel.com for you? I recommend signing up with your GitHub account - it makes the GitHub connection easier later.
 
 USER: Yes / I'll do it myself
 
@@ -74,19 +74,14 @@ vercel --version
 npm i -g vercel
 ```
 
-3. Once installed, authenticate (run in background to avoid blocking):
+3. Once installed, authenticate visibly:
 ```bash
-vercel login > /tmp/vercel-auth.log 2>&1 &
-sleep 3
-cat /tmp/vercel-auth.log
+vercel login
 ```
 
-4. Read the output to get the device URL with code, then open it:
-```bash
-open "https://vercel.com/oauth/device?user_code=[CODE FROM OUTPUT]"
-```
+4. Read the output. If Vercel shows a login URL, email link, or device code, show it clearly in chat and open the URL if browser opening is available.
 
-5. Tell user: "I just opened Vercel in your browser. Click Authorize, then let me know when you're done."
+5. Tell user: "Vercel is asking you to authorize the CLI. Follow the browser or email prompt, then let me know when you're done."
 
 STOP: Let me know when you've authorized it.
 
@@ -107,9 +102,9 @@ Now let's put your quiz on the internet.
 
 ACTION: Deploy to Vercel:
 
-1. Navigate to the quiz-project folder:
+1. Navigate to the quiz project folder:
 ```
-cd [path to quiz-project]
+cd quiz-project
 ```
 
 2. Deploy to production:
@@ -181,9 +176,9 @@ USER: Yes
 
 One more thing: what if you want to update your quiz later?
 
-Here's the flow: make changes on your computer, ask me to "push to GitHub," and Vercel will automatically update your live website.
+Here's the flow: make changes on your computer, ask me to "push to GitHub," and if your Vercel project is connected to GitHub, Vercel will automatically update your live website.
 
-That's it. Vercel watches your GitHub and auto-deploys whenever you push changes. Magic.
+That's it. When the GitHub connection is set up, Vercel watches your repo and auto-deploys whenever you push changes. Magic.
 
 STOP: Pretty cool, right?
 
@@ -250,12 +245,12 @@ USER: (exits or explores)
 ## Important Notes for Codex
 
 - The `vercel --prod --yes` flags are critical - `--yes` skips all interactive prompts, `--prod` deploys to production immediately
-- Vercel auto-connects to the GitHub repo they created in 4.4 - this is why signing up with GitHub was important
+- The Vercel project may need to be connected to the GitHub repo they created in 4.4 - this is why signing up with GitHub is helpful
 - The URL format is usually `[project-name]-[random].vercel.app`
-- Auto-deploy is set up automatically when they link GitHub during Vercel signup
+- Auto-deploy depends on the Vercel project being connected to the GitHub repo
 - If deploy fails, common issues:
   - Build errors → Check the Vercel dashboard for logs
-  - Not in the right directory → Make sure you're in quiz-project
+  - Not in the right directory → Make sure you're in `quiz-project/`
 - The celebration moment (sending to a friend) is crucial - let it breathe, don't rush past it
 
 ## Success Criteria
@@ -266,5 +261,5 @@ USER: (exits or explores)
 - User can access the quiz from their phone
 - User has sent the link to at least one other person
 - User understands the Plan → Build → Iterate → Save → Go Live loop
-- User knows how to update: make changes → push to GitHub → auto-deploys
+- User knows how to update: make changes → push to GitHub → Vercel auto-deploys if the GitHub connection is enabled
 - User feels empowered to build more things

@@ -39,7 +39,7 @@ By the end of this module, students should:
 1. Understand that product strategy is about WHERE to compete and HOW to win (making hard tradeoffs, saying no to things)
 2. Know how to use Rumelt's Strategy Kernel framework (Diagnosis, Guiding Policy, Coherent Actions) to structure strategic thinking
 3. Experience using AI to research competitive landscape, pressure-test choices with devil's advocate, and synthesize strategy
-4. Learn to use /skills to transform strategy documents into executive presentations
+4. Learn to use bundled skills to transform strategy documents into executive presentations
 
 ---
 
@@ -115,7 +115,9 @@ Display key sections from `frameworks/rumelt-strategy-kernel.md`:
 - Sequenced roadmap with clear dependencies
 - Resources focused on the strategy
 
-The framework guide is in `frameworks/rumelt-strategy-kernel.md` if you want to read more later.
+The framework guide is here if you want to read more later:
+
+`frameworks/rumelt-strategy-kernel.md`
 
 For now, let's set up your strategic situation."
 
@@ -188,7 +190,7 @@ Each agent should use web search and return a concise summary focused on:
 - What seems to be working vs not working
 - Where there might be whitespace
 
-Consolidate findings in the conversation (don't create a separate doc)
+Consolidate findings in the conversation (don't create a separate doc). If active agents appear in the Codex UI, point them out and encourage the student to click into one to inspect its prompt while waiting.
 
 **Present it like this:**
 
@@ -546,7 +548,9 @@ Make this feel like THEIR strategy - use their language from choices, reference 
 
 **Present it like this:**
 
-"Done! I've created your complete AI Product Strategy in `h1-2026-ai-product-strategy.md`.
+"Done! I've created your complete AI Product Strategy:
+
+`h1-2026-ai-product-strategy.md`
 
 Here's what your 5 strategic choices became:
 
@@ -566,7 +570,7 @@ Notice how your choices created a **coherent strategy**. Each decision reinforce
 
 This is what Rumelt means by 'coherent actions' - the pieces fit together and reinforce each other.
 
-The complete strategy is in the document.
+The complete strategy is in `h1-2026-ai-product-strategy.md`.
 
 Okay... now want to see something cool?
 
@@ -580,13 +584,15 @@ I can turn this into an executive presentation."
 
 **When student says 'Create executive slides from my strategy', say:**
 
-"Great! Let me introduce you to **Codex Skills**.
+"Great! Let me introduce you to **Codex skills**.
 
-Skills are specialized capabilities that extend what I can do beyond just conversation and file operations. Think of them like plugins or extensions.
+Skills are specialized instructions that extend what I can do beyond just conversation and file operations. Think of them like reusable playbooks.
 
-One of the available skills is **pptx** - it can create PowerPoint presentations from your documents. Instead of you manually creating a slide deck from your strategy doc, the pptx skill does it automatically.
+One bundled skill here is:
 
-Here's how it works: I'll use the Skill tool to invoke the pptx skill. It reads your `h1-2026-ai-product-strategy.md` file and creates a professional PowerPoint deck formatted for executive review.
+`skills/pptx/SKILL.md`
+
+It can create PowerPoint presentations from documents. Instead of you manually creating a slide deck from your strategy doc, I can follow that skill's instructions to generate the deck.
 
 **Note:** The pptx skill requires the python-pptx library. If it's not installed, I'll help you get it set up - this might take a moment. It's a good reminder that even 'simple' automations have technical dependencies, just like real PM work!
 
@@ -594,10 +600,9 @@ Let me create the slides now."
 
 **ACTION:**
 
-Use the Skill tool to invoke the pptx skill:
+Follow the bundled pptx skill instructions in `skills/pptx/SKILL.md`:
 
 ```
-Skill: pptx
 Task: Create an executive presentation from h1-2026-ai-product-strategy.md
 
 Requirements:
@@ -614,13 +619,15 @@ Requirements:
 - Save as strategy-review-slides.pptx
 ```
 
-The pptx skill will read the strategy markdown file and generate a complete PowerPoint presentation with charts, graphs, and visual elements.
+The pptx skill will read `h1-2026-ai-product-strategy.md` and generate a complete PowerPoint presentation with charts, graphs, and visual elements.
 
 **Present it like this:**
 
-"Done! I've created your executive slide deck: `strategy-review-slides.pptx`
+"Done! I've created your executive slide deck:
 
-(Remember, markdown editors can only display .md files, so you won't see the .pptx there. Find it in your file explorer.)
+`strategy-review-slides.pptx`
+
+You can find it in **Files**, then open it with PowerPoint, Keynote, or Google Slides.
 
 Here's what the pptx skill generated:
 
@@ -685,10 +692,10 @@ This is exactly how the best PMs use AI for strategy - as a thinking partner, no
 
 **OTHER FRAMEWORKS TO EXPLORE:**
 
-Want to go deeper on strategy? Check out these frameworks in your `frameworks/` folder:
+Want to go deeper on strategy? Check out these frameworks in **Files**:
 
-- **`swot-analysis.md`** - Analyze your Strengths, Weaknesses, Opportunities, Threats to identify strategic options
-- **`gibson-biddle-dhm.md`** - Score your strategy on Delight, Hard to Copy, Margin-enhancing (from Netflix's VP Product)
+- `frameworks/swot-analysis.md` - Analyze your Strengths, Weaknesses, Opportunities, Threats to identify strategic options
+- `frameworks/gibson-biddle-dhm.md` - Score your strategy on Delight, Hard to Copy, Margin-enhancing (from Netflix's VP Product)
 
 These can complement Rumelt's Kernel for even more rigorous strategic thinking.
 
@@ -711,7 +718,7 @@ You just finished the entire **PM Workflows** level. Let's step back and see wha
 **Module 2.1 - Write a PRD:**
 - ✅ Used @-mentions to incorporate templates, context, and research
 - ✅ Launched parallel agents to generate 3 strategic PRD approaches
-- ✅ Used sub-agents (engineer, executive, user researcher) for multi-perspective feedback
+- ✅ Used custom agents (engineer, executive, user researcher) for multi-perspective feedback
 - ✅ Created a production-ready PRD for AI voice chat feature
 
 **Module 2.2 - Analyze Data:**
@@ -756,7 +763,7 @@ Get ready for Level 3!
 - Be concrete - no generic strategy buzzwords
 
 **For the pptx skill demonstration:**
-- First attempt: Try to invoke the pptx skill and help install python-pptx if needed
+- Follow the bundled `skills/pptx/SKILL.md` instructions and help install python-pptx if needed
 - If installation works: Great! Generate the PowerPoint as described
 - If installation fails after 2-3 attempts: Use graceful fallback:
   - Create a structured markdown outline of presentation slides instead
@@ -780,7 +787,7 @@ Module 2.3 is successful if the student:
 - ✅ Made strategic choices and thought through the tradeoffs of each
 - ✅ Experienced devil's advocate as a tool for pressure-testing thinking
 - ✅ Has a complete, coherent strategy document they could actually use
-- ✅ Knows how to use /skills to transform documents into presentations
+- ✅ Knows how to use bundled skills to transform documents into presentations
 
 ---
 

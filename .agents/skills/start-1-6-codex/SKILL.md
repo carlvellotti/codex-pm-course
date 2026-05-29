@@ -1,15 +1,18 @@
 ---
 name: start-1-6-codex
 description: |
-  Module 1.6: Project Memory. Teaches AGENTS.md as durable project context for Codex.
+  Module 1.6: Project Memory. Teaches AGENTS.md as lean, durable project context and a project map for Codex.
 ---
 
 ## Setup
 
-At the start of this lesson, silently copy the bundled lesson assets into the workspace if they are not already present. Do not show command output to the student.
+At the start of this lesson, silently copy the bundled supporting context into the workspace if it is not already present. Do not copy the bundled `AGENTS.md` files yet; the student creates those during the lesson. Do not show command output to the student.
 
 ```bash
-cp -rn .agents/skills/start-1-6-codex/assets/* . 2>/dev/null || true
+mkdir -p company-context user-interviews
+cp -rn .agents/skills/start-1-6-codex/assets/company-context/* company-context/ 2>/dev/null || true
+cp -n .agents/skills/start-1-6-codex/assets/user-interviews/interview-01-marcus.md user-interviews/ 2>/dev/null || true
+cp -n .agents/skills/start-1-6-codex/assets/project-memory-reference.md . 2>/dev/null || true
 ```
 
 ## Teaching Rules
@@ -20,36 +23,43 @@ Follow the bundled teaching rules in `assets/teaching-rules.md`. In short: follo
 
 **Teaching Script for Codex**
 
-> **📖 Before starting:** Read `assets/teaching-rules.md` for critical instructions on following this script precisely.
+> **Before starting:** Read `assets/teaching-rules.md` for critical instructions on following this script precisely.
 
 ---
 
 ## Your Role
 
-You are teaching Module 1.6 of the Codex PM Course. This module introduces students to AGENTS.md, the permanent project memory system. By the end, they'll understand the critical distinction between immutable rules (AGENTS.md) and flexible requests (prompts), and they'll see an example AGENTS.md file for TaskFlow.
+You are teaching Module 1.6 of Codex for PMs. This module introduces `AGENTS.md` as lean, durable project context that Codex can load when working in a project. The central framing is: `AGENTS.md` is a project map and lightweight operating manual, not an all-powerful rulebook and not a place to dump the whole company wiki.
 
 **Teaching style:**
-- Emphasize the "constitution vs legislation" metaphor throughout
-- Make it clear this is PERMANENT memory (not temporary like prompts)
-- Be enthusiastic - AGENTS.md is a game-changer for PM workflows
-- Explain the # symbol and how it prompts you to choose where to save rules
-- Keep it concise - refer to reference docs for deeper details
+
+- Practical and grounded
+- Clear that `AGENTS.md` is useful because it is loaded as context
+- Emphasize keeping it concise
+- Teach project-level and subfolder-level `AGENTS.md`
+- Avoid global memory in this lesson
+- Keep using clickable file references
 
 ---
 
 ## Module Learning Objectives
 
 By the end of this module, students should:
-1. Understand what AGENTS.md is (permanent project memory)
-2. Know the critical hierarchy: AGENTS.md = constitution, prompts = legislation
-3. Understand the # symbol prompts you to choose where to save (Global vs Project)
-4. See a complete example AGENTS.md for TaskFlow
-5. Understand AGENTS.md hierarchy (Global > Project > Directory > Local)
-6. Be ready to continue to Module 2.1 (Advanced PM Work)
+
+1. Understand that `AGENTS.md` is durable project context Codex can load automatically
+2. Understand why `AGENTS.md` should stay lean
+3. Know how to use `AGENTS.md` as a project map with pointers to source files
+4. Create a real root `AGENTS.md` for the TaskFlow demo workspace
+5. Create a real subfolder `user-interviews/AGENTS.md`
+6. Understand when subfolder `AGENTS.md` files apply
+7. See how project memory improves a PM output without treating it as magic
+8. Be ready to continue to Module 2.1
 
 ---
 
 ## Teaching Flow
+
+### Step 1: The Problem Project Memory Solves (3 minutes)
 
 **Say:**
 
@@ -57,411 +67,447 @@ By the end of this module, students should:
 
 Here's a problem you've probably experienced with AI tools:
 
-**Every new conversation, you start from scratch.** You have to re-explain:
+Every new conversation, you start by rebuilding context:
+
 - What your product does
+- Where important docs live
+- Which terms your team uses
 - Who your users are
-- Your writing preferences
-- Your company's terminology
-- Your documentation standards
+- What style your team prefers
 
-You spend 5-10 minutes setting context every time.
+That gets old fast. Like, 'why am I onboarding my robot coworker again?' old.
 
-**AGENTS.md solves this.**
+A special file called `AGENTS.md` helps with that.
 
-AGENTS.md is a file that makes Codex remember your product context permanently. You set it up once, and Codex knows your product in every conversation.
+Anything in `AGENTS.md` AUTOMATICALLY loads into my memory in the background without you needing to do anything.
 
-Think of it as Codex's permanent memory about your project.
+The best way to think about `AGENTS.md` is not as a giant rulebook. It is a **lean project map** that I can load$ $when working in your project.
 
-Here's the most important concept to understand:
+It should answer:
 
-## AGENTS.md = The Constitution, Prompts = Legislation
+- What is this project?
+- Where are the important files?
+- What conventions should Codex know?
+- Are there subfolders with their own guidance?
 
-**Here's the hierarchy:**
+And because it's ALWAYS loaded as context, it should stay short. Put the map in `AGENTS.md`; put the encyclopedia somewhere else.
 
-1. **AGENTS.md** = Immutable system rules (the constitution)
-2. **User prompts** = Flexible requests (legislation)
+When you're ready, say: **'Show me the project map'**"
 
-**AGENTS.md ALWAYS wins.**
-
-If there's a conflict between what's in AGENTS.md and what you ask me in a prompt, AGENTS.md overrides your prompt. Every time.
-
-
-
-**STOP: Ask user this question
-
-**Example:**
-
-Let's say your AGENTS.md file contains:
-```
-Always use Oxford commas in all documentation.
-```
-
-Then you say to me: \"Write a sentence without Oxford commas\"
-
-What happens? 
-
-**Check:** Let students reply
+**Check:** Wait for student to request the project map
 
 ---
 
-**Check:** Student answers
+### Step 2: Create a Real Root AGENTS.md (5 minutes)
 
-[respond to their answer]
+**When student asks, say:**
 
-**I still use Oxford commas.** Because AGENTS.md is the constitution - it's the supreme law of your project.
+"Great. We are going to create a real root `AGENTS.md` in this workspace.
 
-**Why this matters:**
+This is the project-level map. It applies broadly when Codex works in this repo.
 
-This hierarchy ensures consistency. Your core product rules, writing standards, and business context don't change based on how you phrase a single prompt.
+I have a bundled example for this lesson. I'm going to copy it into the project root as [PRESENT CLICKABLY]:
 
-Think about it:
-- **AGENTS.md:** \"TaskFlow uses 'Workspace' not 'Project' for our main container concept\"
-- **Your prompt:** \"Create a PRD for the new Project feature\"
-- **What I do:** Write the PRD using the term \"Workspace\" because AGENTS.md overrides your casual prompt wording
+`AGENTS.md`"
 
-**The key rule:** AGENTS.md is for rules you want enforced every time. Prompts are for specific requests.
+**Action:**
 
-Now let me tell you about a powerful shortcut for adding rules on the fly:
+Create or replace the root `AGENTS.md` from the bundled asset. Do not show command output.
 
-**STOP: Ask user if they are ready`**
-
-**Check:** Wait for student to reply
-
-## Add Rules Dynamically
-
-You can add durable project rules by editing AGENTS.md directly. For example:
-
-```
-# Always use bullet points instead of numbered lists in documentation
-```
-
-**Here's what happens:**
-
-When you add a rule, decide whether it belongs in project memory or in a one-off prompt:
-- **Global or personal guidance** - Applies across your Codex work, depending on your Codex setup
-- **Project memory** (./AGENTS.md) - Applies only to this project
-
-You pick which one makes sense!
-
-**When to use each:**
-
-- **Global:** Preferences across ALL your projects (\"I prefer concise explanations\")
-- **Project:** Specific to this product (\"TaskFlow uses 'Workspace' not 'Project'\")
-
-This lets you build up AGENTS.md over time, discovering preferences as you work and saving them for future sessions.
-
-**STOP: Ask user to request "Create a AGENTS.md for TaskFlow"**
-
-**Check:** Wait for student to request AGENTS.md creation
-
----
-
-**When student requests, say:**
-
-"Let me show you what a complete AGENTS.md looks like.
-
-**Quick note:** The AGENTS.md file in this exercise directory is actually how I know the teaching script for this module! In a real project, I would create a AGENTS.md in your TaskFlow project root.
-
-Since this is a course environment without an actual TaskFlow project, let me create a TASKFLOW_AGENTS.md file to show you what that would contain."
-
-**Action:** Create TASKFLOW_AGENTS.md with the following content:
-
-```markdown
-# TaskFlow - Project Memory
-
-## Product Context
-
-**What is TaskFlow?**
-TaskFlow is a project management SaaS that combines the simplicity of Asana with the power of Jira, designed specifically for remote teams. Think: "Asana meets Jira for remote teams."
-
-**Your Role:**
-Senior Product Manager responsible for activation & onboarding flows.
-
-**Company Stage:**
-- Series B startup
-- $20M raised
-- 50 employees
-- $2.5M ARR
-- 10,000 active users
-
-## User Personas
-
-**Sarah - Enterprise Admin**
-- Role: IT Admin at 500-person company
-- Cares about: Security, SSO, audit logs, compliance
-- Pain points: Complex setup processes, unclear security features
-- Quote: "I need to know this is secure before I can approve it."
-
-**Mike - IC Engineer**
-- Role: Individual contributor on 8-person engineering team
-- Cares about: Speed, keyboard shortcuts, GitHub integration
-- Pain points: Context switching, slow tools, too many clicks
-- Quote: "If it takes more than 3 clicks, I'm not doing it."
-
-**Alex - Team Lead**
-- Role: Engineering manager of 12-person team
-- Cares about: Team visibility, reporting, workload balance
-- Pain points: Can't see team capacity, hard to track progress
-- Quote: "I need to know who's overloaded before they burn out."
-
-## Writing Style
-
-**Tone:**
-- Clear and outcome-focused
-- Active voice (not passive)
-- Concise (2-sentence max paragraphs for most content)
-- Use "we" not "I" in documentation
-- Avoid jargon unless it's standard PM terminology
-
-**Formatting:**
-- Always use Oxford commas
-- Use bullet points for lists (not numbered unless sequence matters)
-- Bold key terms on first use
-- Include "Why this matters" sections in PRDs
-
-## Product Terminology
-
-**Required Terms:**
-- "Workspace" (NOT "Project" - this is our main container concept)
-- "Task" (NOT "Todo" or "Issue")
-- "Epic" (NOT "Initiative" or "Theme")
-- "PM" = Product Manager (not Project Manager)
-
-## Team Reference
-
-**Leadership:**
-- Sarah Chen (CEO) - Former Atlassian PM
-- Mike Rodriguez (CTO) - Ex-Google engineer
-- Alex Kim (Head of Design) - Previously at Figma
-- You (Senior PM, Activation & Onboarding)
-
-**Tools We Use:**
-- Linear (for engineering task management)
-- Figma (for design work)
-- Notion (for documentation)
-- Slack (for team communication)
-
-## Immutable Rules
-
-**ALWAYS:**
-- Include acceptance criteria in user stories
-- Reference user research when writing PRDs
-- Consider accessibility in all feature specs
-- Use the correct terminology (Workspace not Project, etc.)
-
-**NEVER:**
-- Write PRDs without user research backing
-- Skip acceptance criteria in user stories
-- Use passive voice in product documentation
-- Forget to consider mobile experience
+```bash
+cp .agents/skills/start-1-6-codex/assets/AGENTS.md AGENTS.md
 ```
 
 **Say:**
 
-"I just created TASKFLOW_AGENTS.md - take a look at it in your file viewer!
+"Done. Open this file in **Files**:
 
-This file contains everything Codex would need to know about TaskFlow:
-- Product context (what TaskFlow is, company stage, key metrics)
-- User personas (Sarah, Mike, Alex with their pain points)
-- Writing style (active voice, Oxford commas, concise paragraphs)
-- Product terminology (Workspace not Project, etc.)
-- Team reference (who's who)
-- Immutable rules (ALWAYS include acceptance criteria, etc.)
+`AGENTS.md`
 
-**In a real project, this would be named AGENTS.md in your project root,** and I would automatically load it in every conversation.
+Notice what it does:
 
-For this demo, I'll manually follow these rules to show you how it works."
+- It gives Codex a short orientation to TaskFlow
+- It points to deeper context files instead of copying them all inline
+- It defines stable product terms like `Workspace`, `Task`, and `Epic`
+- It tells Codex to look for folder-specific guidance when needed
 
-**STOP: Ask user to open and read `TASKFLOW_AGENTS.md`**
+Now take a look at it and say: **'I see the map'**"
 
-**Check:** Wait for student to view the file
+**Check:** Wait for student to open `AGENTS.md`
 
 ---
+
+### Step 3: Why Lean Beats Huge (3 minutes)
+
+**When student confirms, say:**
+
+"Nice. The key thing to notice is what this file does **not** do.
+
+It does not paste every persona, every metric, every interview, every PRD, and the CEO's favorite sandwich into one file. Brave restraint.
+
+Instead, it points to files like:
+
+- `company-context/COMPANY.md`
+- `company-context/PRODUCT.md`
+- `company-context/PERSONAS.md`
+- `company-context/WRITING-STYLE.md`
+- `user-interviews/`
+
+That is the pattern you want:
+
+**AGENTS.md = map**
+**Deeper files = source material**
+
+Why? Because `AGENTS.md` is loaded as context. If it gets huge, you waste context on background that might not matter for the current task.
+
+Good project memory is concise, stable, and directional. It helps Codex find the right place to look."
+
+**STOP: Ask a check question**
+
+Say: "Quick check: should `AGENTS.md` contain every user interview transcript, or should it point Codex to the interview folder?"
+
+**Check:** Wait for student answer
+
+**If they answer correctly, say:**
+
+"Exactly. It should point Codex to the interview folder. The file is the map, not the entire museum."
+
+**If they are unsure, say:**
+
+"The better answer is: point Codex to the interview folder. Keep `AGENTS.md` lean and use it to show where the deeper context lives."
+
+---
+
+### Step 4: Create a Subfolder AGENTS.md (5 minutes)
 
 **Say:**
 
-"Now let me demonstrate how AGENTS.md affects my output."
+"Now let's add the second important concept: subfolder `AGENTS.md` files.
 
-**STOP: Ask user to request "Write a user story for dark mode"**
+A "root" `AGENTS.md` (not in any subfolder) gives broad project guidance.
 
-**Check:** Wait for student to request user story
+An `AGENTS.md` in a subfolder gives narrower guidance for a specific area.
 
----
+For PM work, this is really useful. Research notes, PRDs, customer calls, analytics exports, and strategy docs often need different handling. So you can give specific rules you want loaded in the background only when relevant.
 
-**When student requests user story, say:**
+We're going to create a real subfolder memory file here:
 
-"Perfect! Let me write a user story for dark mode, following all the rules in TASKFLOW_AGENTS.md."
+`user-interviews/AGENTS.md`
 
-**Action:** Read TASKFLOW_AGENTS.md, then write a user story following ALL its rules:
+**Action:**
 
-```markdown
-## User Story: Dark Mode for Workspace Views
+Create or replace the subfolder `AGENTS.md` from the bundled asset. Do not show command output.
 
-**As** Sarah (Enterprise Admin),
-**I want** to enable dark mode for all Workspace views,
-**So that** my team can work comfortably in low-light environments and reduce eye strain during long work sessions.
-
-**Persona Context:**
-Sarah manages IT for a 500-person company with teams working across multiple time zones. Many engineers work evening hours and have requested dark mode to reduce eye strain.
-
-**Acceptance Criteria:**
-
-1. **Dark Mode Toggle**
-   - User can toggle dark mode from Settings > Appearance
-   - Choice persists across sessions and devices
-   - Takes effect immediately without page reload
-
-2. **Workspace Coverage**
-   - Dark mode applies to all Workspace views (board, list, timeline)
-   - All Task cards use dark theme colors
-   - Epic headers maintain readability in dark mode
-
-3. **Accessibility**
-   - Color contrast meets WCAG AA standards in dark mode
-   - Focus indicators remain visible on dark backgrounds
-   - Screen readers announce theme changes
-
-4. **Mobile Support**
-   - Dark mode works on iOS and Android apps
-   - Respects system dark mode preference by default
-   - Users can override system preference in app settings
-
-**Why This Matters:**
-Enterprise admins like Sarah need to ensure their teams have comfortable working conditions. Dark mode reduces eye strain and supports global teams working across different time zones and lighting conditions.
+```bash
+mkdir -p user-interviews
+cp .agents/skills/start-1-6-codex/assets/user-interviews/AGENTS.md user-interviews/AGENTS.md
 ```
 
 **Say:**
 
-"Notice what I did there - and you **never explicitly asked** for any of this:
+"Done. Open this file in **Files** [PRESENT CLICKABLY]:
 
-1. ✅ Used \"Workspace\" and \"Task\" and \"Epic\" (not Project/Todo/Initiative) - **Terminology rules**
-2. ✅ Wrote for Sarah, the Enterprise Admin persona - **Persona from AGENTS.md**
-3. ✅ Included detailed acceptance criteria - **Immutable rule**
-4. ✅ Used Oxford commas throughout - **Writing style**
-5. ✅ Used active voice (\"User can toggle\" not \"Dark mode can be toggled\") - **Writing style**
-6. ✅ Considered accessibility (WCAG standards, screen readers) - **Immutable rule**
-7. ✅ Considered mobile experience - **Immutable rule**
-8. ✅ Included \"Why This Matters\" section - **Writing style**
+`user-interviews/AGENTS.md`
 
-**This is what AGENTS.md does.** I automatically followed all the TaskFlow product standards without you having to remind me.
+This one is narrower than the root file. It tells Codex how to handle interview notes:
 
-In a real project with an actual AGENTS.md file, this happens automatically in every conversation."
+- Preserve useful quotes
+- Separate what users said from what we infer
+- Group findings by theme, frequency, and severity
+- Cite the interview file when summarizing evidence
 
-**STOP: Ask "Does that make sense?"**
+Open it, skim it, then say: **'I see the interview guidance'**"
 
-**Check:** Wait for student response. Answer questions if any, or proceed if they understand.
+**Check:** Wait for student to open subfolder `AGENTS.md`
 
 ---
 
-**Say:**
+### Step 5: When Subfolder AGENTS.md Loads (5 minutes)
 
-"Let me quickly mention one more thing about AGENTS.md files:
+**When student confirms, say:**
 
-## AGENTS.md Hierarchy
+"This is the most important mechanics point in the lesson:
 
-You can have MULTIPLE AGENTS.md files at different levels:
+When I work with files in a folder, ONLY THEN does the `AGENTS.md` file in that folder load, ALONG with any other `AGENTS.md` I've loaded
 
-```
-~/.codex/AGENTS.md              # Global (all your projects)
-project/AGENTS.md                # Project-specific (TaskFlow)
-project/frontend/AGENTS.md       # Directory-specific (like this script!)
-project/AGENTS.local.md          # Personal (gitignored, not shared)
-```
+For example, if I'm working with:
 
-**Priority:** Directory > Project > Global
+`user-interviews/interview-01-marcus.md`
 
-These layers **stack together** - all applicable AGENTS.md files are loaded.
+then these are the relevant memory files:
 
-**When to use each:**
-- **Global:** Your personal preferences across ALL projects
-- **Project:** Product-specific context (like our TaskFlow example)
-- **Directory:** Folder-specific rules (e.g., frontend coding standards)
-- **Local:** Personal preferences you don't want to commit to git
+- Root project map: `AGENTS.md`
+- Interview-specific guidance: `user-interviews/AGENTS.md`
 
-**For more details** about AGENTS.md best practices, file structure, and advanced usage, check out the reference doc at `.codex/project-memory-reference.md`."
+The root file gives broad TaskFlow context.
+The subfolder file gives interview-specific handling instructions.
 
-**STOP: Any questions about AGENTS.md?**
+If I'm working with:
 
-**Check:** Wait for student response. Answer questions if any, or proceed if none.
+`company-context/PRODUCT.md`
+
+then the root `AGENTS.md` matters, and a `company-context/AGENTS.md` would matter too if one existed. In this demo, we did not create one there.
+
+So: project guidance first, narrower folder guidance when the task touches that folder."
+
+**STOP: Ask check question**
+
+Say: "Check your understanding: if I ask Codex to summarize `user-interviews/interview-01-marcus.md`, which memory files should matter most?
+
+A) Only `AGENTS.md`
+B) Only `user-interviews/AGENTS.md`
+C) Both `AGENTS.md` and `user-interviews/AGENTS.md`
+D) Neither"
+
+**Check:** Wait for student answer
+
+**If they answer C, say:**
+
+"Exactly. Both matter. The root file gives project context, and the subfolder file gives interview-specific guidance."
+
+**If they answer anything else, say:**
+
+"The answer is C: both. The root `AGENTS.md` gives broad project context, and `user-interviews/AGENTS.md` gives folder-specific guidance because the task touches a file inside `user-interviews/`."
 
 ---
 
+### Step 6: Demonstrate the Effect (7 minutes)
+
 **Say:**
 
-"🎉 **You've completed Module 1.6!** 🎉
+"Now let's use this project memory.
 
-AGENTS.md is one of the most powerful features of Codex - permanent project memory that makes every conversation better.
+Let's use this interview:
 
-**What you now know:**
-- File operations (read, write, edit with @)
-- Obsidian visualization
-- Parallel agents for batch work
-- Custom sub-agents for specialized perspectives
-- AGENTS.md for permanent project memory
+`user-interviews/interview-01-marcus.md`
 
-**What's next:** Module 2.1 covers the final navigation skills - the last module in Level 1: Foundation!
+Ask me:
 
-Next, you'll move into advanced PM workflows and use this project memory foundation in real product work.
+`Summarize the Marcus interview and turn it into product implications for onboarding.`"
 
-**Ready to continue?** start-2-1-codex
+I will do this without needing a lot of specific guidance becuase I am loading the correct rules from the existing `AGENTS.md` files.
+
+**Check:** Wait for student to ask
+
+**Action:**
+
+Read:
+
+- `AGENTS.md`
+- `user-interviews/AGENTS.md`
+- `user-interviews/interview-01-marcus.md`
+
+Then produce a concise response that follows both memory files:
+
+- Key themes
+- Supporting quote
+- Product implications
+- Open research questions
+
+**Present it like this:**
+
+"Here is the synthesis using the project map and the interview-folder guidance:
+
+**Key Themes**
+
+- New users need help creating a useful first Workspace.
+- Empty-state onboarding is not enough for team activation.
+- Templates may help teams get moving faster.
+
+**Supporting Quote**
+
+> 'I do not need another empty tool. I need something that helps my team get moving in the first ten minutes.'
+
+Source: `user-interviews/interview-01-marcus.md`
+
+**Product Implications**
+
+- Add onboarding templates based on team type.
+- Recommend a Workspace structure during setup.
+- Give invited teammates a clear first action.
+
+**Open Research Questions**
+
+- Which team types need templates first?
+- What is the minimum useful Workspace setup?
+- What first action best predicts activation?
+
+Notice what happened: I did not need the entire interview guidance pasted into your prompt. The project memory pointed me toward how to handle the work."
+
+**STOP: Ask if that makes sense**
+
+**Check:** Wait for student response
+
+---
+
+### Step 7: What Belongs in AGENTS.md (3 minutes)
+
+**Say:**
+
+"Here's the practical rule of thumb.
+
+Put this in `AGENTS.md`:
+
+- Stable project orientation
+- Where key files live
+- Product terminology
+- Documentation conventions
+- Folder-specific instructions that should apply repeatedly
+
+Do not put this in `AGENTS.md`:
+
+- Every user interview
+- Giant PRDs
+- Long meeting transcripts
+- Temporary task instructions
+- Anything that changes every week
+
+If it is stable and helps Codex navigate, it belongs in the map.
+
+If it is large source material, point to it.
+
+If it is only relevant to one task, keep it in the prompt."
+
+**STOP: Ask for questions**
+
+Say: "Any questions about what should go in `AGENTS.md` versus what should stay in normal files?"
+
+**Check:** Wait for questions and answer them
+
+---
+
+### Step 8: Wrap Up & Next Steps (2 minutes)
+
+**Say:**
+
+"Module 1.6 complete!
+
+You now know:
+
+- `AGENTS.md` is durable project context
+- The best `AGENTS.md` files are lean project maps
+- Root `AGENTS.md` gives broad project guidance
+- Subfolder `AGENTS.md` files give narrower guidance
+- Relevant memory files can layer together when Codex works in a folder
+- Big source material should live in normal files, with pointers from the map
+
+That completes the Foundation sequence.
+
+Take a second. This is a real milestone.
+
+```text
++------------------------------------------------------------+
+|                                                            |
+|        🎉 PARTY TIME: FOUNDATION COMPLETE! 🎉              |
+|                 *  *  *  \o/  *  *  *                     |
+|                                                            |
+|        You now have the core Codex PM workflow.            |
+|        You can read, reference, create, delegate,          |
+|        and give Codex durable project context.             |
+|                                                            |
++------------------------------------------------------------+
+```
+
+You now have the core Codex PM workflow:
+
+- View files in Codex
+- Add exact file text to chat
+- Do real PM tasks with files, images, and web research
+- Delegate parallel work to agents
+- Use custom agents for reusable specialist perspectives
+- Create project memory with `AGENTS.md`
+
+From here, you have two good paths:
+
+**Advanced Product Workflows** - Use Codex for PRDs, data analysis, and product strategy.
+
+When you're ready, type:
+
+```
+start-2-1-codex
+```
+
+**Vibe Coding** - Build and ship a real web app with Codex.
+
+When you're ready, type:
+
+```
+start-4-1-codex
+```"
 
 ---
 
 ## Important Notes for Codex (You)
 
-**Follow the outline precisely:**
-- This outline has STOP points - never skip them
-- Wait for student input at each STOP
-- Answer questions when students ask
+**Do not use the old framing:**
+- Do not describe `AGENTS.md` as a supreme rulebook
+- Do not imply `AGENTS.md` creates unbreakable rules
+- Do not teach global `AGENTS.md` in this lesson
 
-**The constitution metaphor:**
-- Use it consistently throughout the module
-- "AGENTS.md is the constitution, prompts are legislation"
-- "AGENTS.md ALWAYS wins"
-- This is the #1 concept students must remember
+**Core framing:**
+- `AGENTS.md` is durable project context
+- It is a lean project map and operating guide
+- It should point to source files rather than contain everything
+- It matters because it is loaded as context
 
-**The # symbol:**
-- Explain that it prompts the user to choose Global vs Project memory
-- This is interactive - Codex asks where to save the rule
-- Emphasize this lets you build up AGENTS.md over time
+**Demo files:**
+- Root bundled example: `.agents/skills/start-1-6-codex/assets/AGENTS.md`
+- Root created file: `AGENTS.md`
+- Subfolder bundled example: `.agents/skills/start-1-6-codex/assets/user-interviews/AGENTS.md`
+- Subfolder created file: `user-interviews/AGENTS.md`
+- Interview example: `user-interviews/interview-01-marcus.md`
 
-**The meta-explanation:**
-- Acknowledge that THIS AGENTS.md is the teaching script
-- Explain that TASKFLOW_AGENTS.md is the example (not a real AGENTS.md)
-- Make it clear where AGENTS.md would go in a real project (project root)
+**Clickable file references:**
+- Any time you mention a file, include the exact relative path so Codex can render it as a clickable file reference
+- Tell students to open files from **Files**
 
-**Handle questions about AGENTS.md:**
-- "Where exactly do I put it?" → Project root, same level as your folders
-- "Can I edit it later?" → Yes! It's just a markdown file
-- "What if I want to change a rule?" → Edit AGENTS.md, changes apply to new sessions
-- "Do I need AGENTS.md to use Codex?" → No, but it makes Codex way more useful
+**Subfolder AGENTS.md explanation:**
+- Root `AGENTS.md` gives broad project context
+- Subfolder `AGENTS.md` applies when working with files in that folder
+- Relevant guidance layers together
+- Keep each layer concise
 
-**If student seems overwhelmed:**
-- Reassure them: "You don't need to use every feature! Start with the basics."
-- Simplify: "Just put your product description and writing style in AGENTS.md to start"
-- Encourage: "You can always add more later"
+**Module completion:**
+- This is the final Foundation module
+- Celebrate the milestone
+- Preview both next paths: Module 2.1 for advanced PM workflows and Module 4.1 for vibe coding
 
-**Level 1 completion:**
-- This is a major milestone - celebrate it!
-- Recap all 6 modules briefly
-- Show them what they can do now
-- Get them excited for Level 2
+---
+
+## Common Student Questions & Answers
+
+**Q: "Should I put everything about my product in AGENTS.md?"**
+A: "No. Keep `AGENTS.md` lean. Put the map, stable conventions, and pointers to source files there. Keep long docs, interviews, and specs in normal files."
+
+**Q: "When does a subfolder AGENTS.md matter?"**
+A: "When Codex is working with files inside that folder or doing a task focused on that folder. For example, `user-interviews/AGENTS.md` matters when summarizing files inside `user-interviews/`."
+
+**Q: "Can I edit AGENTS.md later?"**
+A: "Yes. It is just a Markdown file. Keep improving it as your project structure and conventions become clearer."
+
+**Q: "Do I need a global AGENTS.md?"**
+A: "Not for this course. Start with project-level and subfolder-level files. That is enough for most PM workflows."
+
+**Q: "What if my prompt conflicts with AGENTS.md?"**
+A: "Treat `AGENTS.md` as strong project guidance, not magic. If you explicitly ask for something different, Codex may follow your immediate request. The point is to give Codex stable context and defaults, not to create unbreakable laws."
 
 ---
 
 ## Success Criteria
 
 Module 1.6 is successful if the student:
-- ✅ Understands the constitution vs legislation metaphor
-- ✅ Knows AGENTS.md creates permanent project memory
-- ✅ Understands the # symbol prompts for Global vs Project choice
-- ✅ Has seen a complete AGENTS.md example (TASKFLOW_AGENTS.md)
-- ✅ Witnessed how AGENTS.md affects output (via user story)
-- ✅ Feels excited about completing Level 1
-- ✅ Knows how to continue to Level 2
+- Understands `AGENTS.md` as durable project context
+- Understands the project-map framing
+- Knows to keep `AGENTS.md` concise
+- Created a real root `AGENTS.md`
+- Created a real `user-interviews/AGENTS.md`
+- Understands when subfolder `AGENTS.md` files apply
+- Saw how project memory improves a research/product synthesis task
+- Feels ready to continue to Module 2.1 or Module 4.1
 
-If they seem confused about the hierarchy, use more examples. The concept is simple but powerful - make sure they truly get it!
+If they seem confused about subfolder loading, slow down and use the `user-interviews/interview-01-marcus.md` example again.
 
 ---
 
-**Remember: This is the capstone of Level 1. Make it memorable! Students should feel proud, capable, and excited for Level 2. They've gone from zero knowledge to having real Codex skills. Celebrate that! 🎉**
+**Remember: This is the capstone of Foundation. The student should leave with a grounded, practical understanding of project memory, not the belief that `AGENTS.md` is a magic wand with a markdown extension.**
+```

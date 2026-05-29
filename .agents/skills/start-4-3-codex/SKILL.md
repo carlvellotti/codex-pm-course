@@ -6,7 +6,7 @@ description: |
 
 ## Setup
 
-At the start of this lesson, silently copy the bundled lesson support files into the workspace if they are not already present. Do not show command output to the student.
+At the start of this lesson, copy the bundled lesson support files into the workspace if they are not already present. Briefly tell the student what files are available if you mention them during the lesson.
 
 ```bash
 cp -rn .agents/skills/start-4-3-codex/assets/* . 2>/dev/null || true
@@ -30,15 +30,17 @@ USER: Yes
 
 First, I need to set up the project structure - this creates all the starter files we need.
 
-ACTION: Run the following command in the quiz-project folder:
+ACTION: Run the following command in `quiz-project/`:
 ```
 npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias "@/*" --yes
 ```
 (The --yes flag accepts all defaults automatically)
 
-Done! Look at your file explorer - you should see a bunch of new files in the quiz-project folder.
+Done! Open **Files** and look inside:
 
-Don't worry about understanding all of them. The `app/` folder is where your quiz will live. Everything else is just configuration.
+`quiz-project/`
+
+You should see a bunch of new files there. Don't worry about understanding all of them. The `quiz-project/app/` folder is where your quiz will live. Everything else is just configuration.
 
 STOP: Do you see the new files?
 
@@ -58,9 +60,9 @@ Perfect. I'll show you my plan, you approve it, then I execute. Let's do it.
 
 STOP: Ask me to build the quiz based on the requirements.
 
-USER: Build my quiz based on REQUIREMENTS.md
+USER: Build my quiz based on `quiz-project/REQUIREMENTS.md`
 
-ACTION: Read REQUIREMENTS.md, then create a plan showing:
+ACTION: Read `quiz-project/REQUIREMENTS.md`, then create a plan showing:
 - Components to create (quiz page, question component, results page)
 - Styling approach based on their chosen style
 - Quiz logic implementation (how answers map to results)
@@ -80,8 +82,8 @@ ACTION: Answer any questions they have, then ask for approval to execute the pla
 
 Building now. This takes a minute or two. You'll see me creating and editing files. Just let me work.
 
-ACTION: Build the full quiz application based on REQUIREMENTS.md:
-1. Create the main quiz page in app/page.tsx
+ACTION: Build the full quiz application based on `quiz-project/REQUIREMENTS.md`:
+1. Create the main quiz page in `quiz-project/app/page.tsx`
 2. Create quiz components (QuizQuestion, Results, etc.)
 3. Implement the quiz logic (tracking answers, calculating results)
 4. Apply the visual style they chose
@@ -96,11 +98,13 @@ Done! Your quiz is built. Now let's see it in action.
 
 I'm going to start your quiz running and open it in your browser.
 
-ACTION: Run `npm run dev` in background in the quiz-project folder
+ACTION: Run `npm run dev` in background in `quiz-project/`
 
 ACTION: Wait a few seconds for the server to start, then open http://localhost:3000 if browser opening is available, otherwise ask the student to open it manually in browser
 
-Your quiz should now be open in your browser!
+Your quiz should now be open in your browser:
+
+http://localhost:3000
 
 This "localhost" link only works on YOUR computer - it's a temporary local version. We'll make it public later when we deploy.
 
@@ -136,7 +140,7 @@ Amazing! You just built a web app. Let that sink in.
 
 The first version is never perfect. Let's iterate - make 2-3 changes until you love it.
 
-Here's a trick: you can take a screenshot, paste it here with **Ctrl+V** (not Cmd+V on Mac!), and tell me what to change.
+Here's a trick: you can take a screenshot, attach it, drag it into the chat, or paste it here, then tell me what to change.
 
 Circle something, point at it, whatever - just show me what you want different.
 
@@ -150,7 +154,7 @@ If you're not sure what to change, here are some ideas:
 - Change the layout or spacing
 - Add a progress bar
 
-STOP: Take a screenshot of your quiz, paste it with Ctrl+V, and tell me what you'd like to change.
+STOP: Take a screenshot of your quiz, attach or paste it into chat, and tell me what you'd like to change.
 
 USER: [Pastes screenshot and describes change]
 
@@ -202,16 +206,16 @@ USER: Let's do GitHub
 - The `npm run dev` command should run in background so the user can keep talking
 - localhost:3000 is the default Next.js port - if something's already using it, Next.js will suggest another port
 - When they paste screenshots, actually look at them and make specific changes
-- The Ctrl+V note is important - Mac users often try Cmd+V first
+- In Codex Desktop App, screenshots can be attached, dragged into chat, or pasted
 - Keep iterations focused - don't suggest too many changes at once
 - If the quiz has bugs, fix them before moving to visual polish
 - The plan-first workflow matters: show the plan, wait for approval, then execute
 
 ## Success Criteria
 
-- Next.js project is scaffolded in quiz-project folder
-- Quiz is fully built based on REQUIREMENTS.md
-- Dev server is running and quiz is viewable at localhost:3000
+- Next.js project is scaffolded in `quiz-project/`
+- Quiz is fully built based on `quiz-project/REQUIREMENTS.md`
+- Dev server is running and quiz is viewable at http://localhost:3000
 - User has done at least 1-2 iterations
 - User is satisfied with how their quiz looks
 - User is ready for GitHub

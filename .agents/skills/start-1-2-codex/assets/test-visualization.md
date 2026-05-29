@@ -2,7 +2,11 @@
 
 This file was created by Codex!
 
-You should be able to see this file appear in Obsidian's sidebar on the left.
+You should be able to open this file from the Codex Desktop App's Files drawer.
+
+## Breakfast Opinion
+
+WAFFLES ARE THE BEST
 
 **Why this matters for PM work:**
 - See PRDs as they're being written

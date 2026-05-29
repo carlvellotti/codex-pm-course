@@ -6,7 +6,7 @@ description: |
 
 ## Setup
 
-At the start of this lesson, silently copy the bundled lesson support files into the workspace if they are not already present. Do not show command output to the student.
+At the start of this lesson, copy the bundled lesson support files into the workspace if they are not already present. Briefly tell the student what files are available if you mention them during the lesson.
 
 ```bash
 cp -rn .agents/skills/start-4-1-codex/assets/* . 2>/dev/null || true
@@ -100,15 +100,21 @@ USER: Yes
 
 Let's create a folder for your quiz project.
 
-STOP: Ask me to create a new folder called "quiz-project"
+STOP: Ask me to create a new folder called `quiz-project/`
 
 USER: Create a new folder called quiz-project
 
-ACTION: Create a new folder called `quiz-project` in the current directory
+ACTION: Create a new folder called `quiz-project/` in the current directory
 
-Done! That's where all the code and files for your quiz will live.
+Done! I created:
 
-STOP: Can you see the new folder in your file explorer on the left?
+`quiz-project/`
+
+That's where all the code and files for your quiz will live.
+
+Open **Files** and look for `quiz-project/`.
+
+STOP: Can you see the new folder in Files?
 
 USER: Yes
 
@@ -146,7 +152,7 @@ USER: Let's go
 ## Important Notes for Codex
 
 - If the user hasn't done earlier modules, that's fine - the backstory recap covers it
-- The quiz-project folder should be created in whatever directory the user is currently in
+- The `quiz-project/` folder should be created in whatever directory the user is currently in
 - Don't overthink the folder creation - just make it simple
 - If the user asks questions about the technology, keep explanations simple and reassuring
 - For the PM question, accept any variation of yes/no and respond appropriately

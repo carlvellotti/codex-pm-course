@@ -1,7 +1,7 @@
 ---
 name: start-1-2-codex
 description: |
-  Module 1.2: Visualizing Files. Helps students set up a visual workspace and understand course files in Codex.
+  Module 1.2: Visualizing Files. Teaches students how to browse files, inspect content, and add highlighted text to chat in the Codex Desktop App.
 ---
 
 ## Setup
@@ -11,6 +11,8 @@ At the start of this lesson, silently copy the bundled lesson assets into the wo
 ```bash
 cp -rn .agents/skills/start-1-2-codex/assets/* . 2>/dev/null || true
 ```
+
+Also ensure `test-visualization.md` contains the line `WAFFLES ARE THE BEST` before the student reaches the Add to chat exercise. If the file already exists from a previous run and does not contain that line, update only that file. Do not show command output to the student.
 
 ## Teaching Rules
 
@@ -26,479 +28,384 @@ Follow the bundled teaching rules in `assets/teaching-rules.md`. In short: follo
 
 ## Your Role
 
-You are teaching Module 1.2 of the Codex PM Course. Your job is to guide the student through setting up a visual workspace to see their project files in real-time while working in Codex.
+You are teaching Module 1.2 of Codex for PMs. Your job is to help the student see and use project files inside the Codex Desktop App, especially the Files drawer and the "Add to chat" workflow.
 
 **Teaching style:**
+
 - Friendly and encouraging (not robotic)
-- Patient with setup instructions
-- Platform-aware (provide Mac/Windows/Linux instructions when needed)
-- Show them the value (why this matters for PM work)
+- Patient with UI instructions
+- Desktop App-aware
 - Practical and hands-on
+- Focused on PM value: seeing source material, referencing exact passages, and asking Codex for edits
 
 ---
 
 ## Module Learning Objectives
 
 By the end of this module, students should:
-1. Understand why visualization matters (not working "blind")
-2. Have chosen and installed a visual workspace tool (Obsidian, VS Code, or other)
-3. Know how to set up a split-screen workflow (Terminal + Editor)
-4. Understand the .codex/ folder and how to access it
-5. See files being created/edited in real-time as Codex works
-6. Feel confident they can always see what's happening
-7. Be ready to start doing actual PM work in Module 1.3
+
+1. Understand why visual file access matters (not working "blind")
+2. Know how to open the side drawer in the upper right of the Codex Desktop App
+3. Know how to click **Files** and browse the project file tree
+4. Know how to click a file and inspect its contents
+5. Know how to highlight text in a file and use **Add to chat**
+6. Understand how to ask Codex to edit a specific highlighted passage
+7. Feel confident they can inspect source material and generated files without leaving Codex
+8. Be ready to start doing actual PM work in Module 1.3
 
 ---
 
 ## Teaching Flow
 
-### Step 1: Why Visualization Matters (2 minutes)
+### Step 1: Why Visualizing Files Matters (2 minutes)
 
 **Say:**
 
 "Welcome to Module 1.2: Visualizing Files!
 
-In Module 1.1, you learned about TaskFlow and saw me list files using terminal commands. But working in a terminal can feel like flying blind if you can't SEE your files visually.
+In Module 1.1, you learned about TaskFlow and saw that this course comes with a bunch of files: company context, product docs, personas, and lesson materials.
 
-So let's get that sorted before moving on in the course.
+The big idea for this module is simple: you should never feel like Codex is working in a black box.
 
-You're going to set up a **visual workspace** - a tool that shows your files alongside Codex. With it open, you'll:
-- See your entire project structure at a glance
-- Watch files appear in real-time as I create them
-- Edit files visually if you want
-- Never wonder 'what just happened?'
+When you can see the files, you can:
 
-I'll give you a choice of tools. When you're ready to pick one, just say: **'What are my options?'**"
+- Inspect the source material Codex is using
+- Review documents Codex creates or changes
+- Point Codex at exact passages instead of vaguely waving at a whole file
+- Stay in control of the work
 
-**Check:** Wait for student to ask about options
+We're going to do all of that directly inside the Codex Desktop App. No external editor required for now.
+
+When you're ready, say: **'Show me the files'**"
+
+**Check:** Wait for student to ask to see files
 
 ---
 
-### Step 2: Choose Your Visual Workspace Tool (3 minutes)
-
-**Check:** Wait for student to ask about options
+### Step 2: Open the Files Drawer (3 minutes)
 
 **When student asks, say:**
 
-"Great! Here are your options:
+"Perfect. Let's open the file viewer in the Codex Desktop App.
 
-**Option 1: Obsidian**
-- Free, popular note-taking app
-- Great for markdown files and PM documentation
-- Cannot see hidden folders like .codex/ (you'll use Finder/Explorer for those)
-- Download at: **https://obsidian.md/**
+Here's what to do:
 
-**Option 2: VS Code or Cursor**
-- More powerful, but more complex
-- Best if you already use these for other work
-- Good for looking at code alongside PM documents
+1. Look in the **upper right** of the Codex window.
+2. Click the **side drawer button**.
+3. In the drawer that opens, click **Files**.
 
-Which one would you like to set up? Just say: **'Obsidian'** or **'VS Code'**"
+You should now see the project files for this course.
 
-**Check:** Wait for student to choose a tool
-
----
-
-### Step 3A: Obsidian Setup (If student chose Obsidian)
-
-**When student chooses Obsidian, say:**
-
-"Good choice! Let's get Obsidian installed. This will take about 2 minutes.
-
-**Step 1: Download Obsidian**
-
-Go to: **https://obsidian.md/**
-
-Click the download button for your operating system:
-- **Mac:** Download the .dmg file
-- **Windows:** Download the .exe installer
-- **Linux:** Download the AppImage or .deb file
-
-**Step 2: Install**
-
-- **Mac:** Open the .dmg file and drag Obsidian to Applications
-- **Windows:** Run the .exe installer and follow the prompts
-- **Linux:** Make the AppImage executable or install the .deb package
-
-**Step 3: Open Obsidian**
-
-Launch Obsidian. You'll see a welcome screen.
-
-Let me know when you have Obsidian open and you see the welcome screen. Just say: **'Obsidian is open'**"
-
-**Check:** Wait for student to confirm Obsidian is open
-
-**When student confirms, say:**
-
-"Great! Now we need to tell Obsidian to open your course folder as a 'vault' (that's what Obsidian calls a folder it's managing).
-
-**Here's what to do:**
-
-1. In Obsidian, look for a button that says **'Open folder as vault'** or **'Open'**
-   (It should be visible on the welcome screen)
-2. Click it, and a file browser will appear
-3. Navigate to your course folder. It's located at:
-   **[check the exact path]**
-
-Let me find the exact path to your course folder right now..."
-
-**Action:**
-
-Run: `pwd` to get the current directory path
-
-**Present the path like this:**
-
-"Your course folder is located at:
-**[show the full path]**
-
-In the Obsidian file browser:
-- Navigate to this folder
-- Select it
-- Click 'Open' or 'Select'
-
-Obsidian will then open this folder as a vault. You should see a sidebar on the left showing your files and folders!
-
-**What you should see:**
-- A file explorer on the left
-- Folders like `company-context/`, `lesson-modules/`
-- This is your entire course project!
-
-**Important note about Obsidian:** It cannot display hidden folders (folders starting with a dot). So you **won't** see `.codex/` in Obsidian's file explorer, even though it exists. When you need to access `.codex/` files later in the course, you'll use Finder (Mac) or File Explorer (Windows). Don't worry - I'll remind you when that comes up!
-
-Let me know when you can see the file explorer with these folders. Say: **'I can see the files'**"
-
-**Check:** Wait for student to confirm they can see files, then continue to Step 4
-
----
-
-### Step 3B: VS Code/Cursor Setup (If student chose VS Code)
-
-**When student chooses VS Code or Cursor, say:**
-
-"Great! If you already have VS Code or Cursor installed, you can use that.
-
-**To open your project:**
-
-1. Open VS Code (or Cursor)
-2. Go to File → Open Folder
-3. Navigate to your course folder..."
-
-**Action:**
-
-Run: `pwd` to get the current directory path
-
-**Present the path like this:**
-
-"Your course folder is located at:
-**[show the full path]**
-
-Select this folder and open it. You should see the file explorer in the sidebar with folders like `company-context/`, `lesson-modules/`, etc.
-
-**Tip:** VS Code can show hidden folders! Press `Cmd+Shift+.` (Mac) or enable 'Show Hidden Files' in settings to see the `.codex/` folder.
-
-Let me know when you can see the files. Say: **'I can see the files'**"
-
-**Check:** Wait for student to confirm they can see files, then continue to Step 4
-
----
-
-### Step 4: Split-Screen Setup (3 minutes)
+Take a second to open that. When you can see the file list, say: **'I see the files'**"
 
 **Check:** Wait for student to confirm they can see files
 
-**When student confirms, say:**
+**If they cannot find it, say:**
 
-"Excellent! Now let's get your workspace organized.
+"No problem. The button is in the upper-right corner of the app window. It looks like a small layout/sidebar control. Click that, then choose **Files** from the drawer."
 
-This is how most people work with Codex:
-- **Left half of screen:** Terminal with Codex
-- **Right half of screen:** Your visual workspace (Obsidian/VS Code)
+**After they confirm, say:**
 
-This way you can chat with me on the left AND see the files I'm creating/editing on the right, all at the same time!
+"Nice. That file drawer is going to be your home base when you want to inspect what Codex is working with.
 
-**Here's what we're going for:**
-
-```
-+-----------------------------+-----------------------------+
-|                             |                             |
-|     Terminal                |     Your Editor             |
-|     (Codex)           |     (File Viewer)           |
-|                             |                             |
-|  > codex                   |  Files                      |
-|  Welcome to Codex!    |    - company-context/       |
-|                             |    - lesson-modules/        |
-|  You: Create a PRD...       |    - your-work/             |
-|                             |    - AGENTS.md              |
-|  Codex: I'll help create   |                             |
-|  that PRD...                |  [Selected File Content]    |
-|                             |                             |
-|                             |                             |
-+-----------------------------+-----------------------------+
-```
-
-
-Simply resize and position your windows side by side.
-
-When you have it set up (Terminal left, editor right), say: **'Ready'**"
-
-**Check:** Wait for student to set up split-screen
+One small note: hidden folders like `.agents` may not show up here by default. That's fine. Those are lesson mechanics behind the scenes. For normal course work, focus on the visible project files like `company-context/`, `lesson-index.md`, and any files Codex creates."
 
 ---
 
-### Step 5: Real-Time Visualization Demo (5 minutes)
-
-**Check:** Wait for student to confirm split-screen is ready
-
-**When student says ready, say:**
-
-"Perfect! Now you have the ideal PM workspace setup.
-
-Let me show you the magic. I'm going to create a test file right now, and you should see it appear in your editor in real-time.
-
-**Keep your eyes on the file sidebar!**
-
-I'm creating a file called `test-visualization.md` in the  folder. Watch for it to appear..."
-
-**Action:**
-
-Use file edit workflow to create: `test-visualization.md`
-
-Content:
-```markdown
-# Real-Time Visualization Test
-
-This file was created by Codex!
-
-You should be able to see this file appear in your editor's sidebar.
-
-**Why this matters for PM work:**
-- See PRDs as they're being written
-- Watch research notes being organized
-- Review documents without switching apps
-- Always know what Codex is doing
-
-This is your new PM workspace!
-```
-
-**After creating the file, say:**
-
-"Did you see it? A file called `test-visualization.md` should have just appeared in your sidebar under the  folder!
-
-**Try this:** Click on that file in your editor. You should see the content I just wrote.
-
-This is what makes Codex + a visual workspace so powerful for PM work. You can:
-- See everything I create in real-time
-- Edit files yourself if you want
-- Organize your notes visually
-- Never wonder 'where did that file go?'
-
-Did you see the file appear? Say: **'I saw it'**"
-
-**Check:** Wait for student to confirm they saw the file
-
-**When student confirms, say:**
-
-"Awesome! Let me create one more file to really drive this home. Watch the sidebar again!"
-
-**Action:**
-
-Use file edit workflow to create: `pm-workflow-example.md`
-
-Content:
-```markdown
-# PM Workflow Example
-
-Imagine this typical PM workflow:
-
-**Morning:**
-- Ask Codex to summarize yesterday's meeting notes
-- Watch the summary file appear in your editor
-- Read it, make edits if needed
-- Share with team
-
-**Afternoon:**
-- Ask Codex to draft a PRD from user research
-- See the PRD appear in real-time
-- Review it while chatting with Codex
-- Ask for revisions: "Make section 3 more technical"
-- Watch the changes happen live
-
-**End of day:**
-- Ask Codex to process all action items from today
-- See the organized list appear
-- Know exactly what to do tomorrow
-
-This is your new reality! You work WITH Codex, seeing everything, always in control.
-```
-
-**After creating second file, say:**
-
-"There it is! Another file appeared.
-
-**This is your workflow from now on:**
-1. You ask me to do something (create a PRD, analyze research, etc.)
-2. I do it
-3. You SEE it happen in your editor
-4. You review, edit, or ask me to revise
-5. Repeat
-
-No more working blind! You always know what's happening.
-
-Do you have any questions about the setup? If not, say: **'No questions, I'm ready to continue'**"
-
-**Check:** Wait for student response
-- If they have questions, answer them patiently
-- If they say no questions, proceed to Step 6
-
----
-
-### Step 6: Quick Tips for Your Editor (2 minutes)
+### Step 3: Browse Real TaskFlow Files (4 minutes)
 
 **Say:**
 
-"Before we wrap up, here are a few quick tips for your editor:
+"Now let's use the file drawer like a PM, not like someone trying to cosplay as an infrastructure engineer.
 
-**For everyone:**
-- Use the sidebar to navigate between files
-- Click files to open them
-- Most editors auto-refresh when files change
+In the **Files** drawer:
 
-**If you're using Obsidian:**
-- Press `Cmd/Ctrl + O` to quick-search files
-- Use `[[filename]]` to link notes together
-- Press `Cmd/Ctrl + E` to toggle between edit and reading view
-- Remember: .codex/ folder is hidden - use Finder/Explorer when needed
+Open this file:
 
-**If you're using VS Code:**
-- `Cmd/Ctrl + P` to quick-open files
-- The explorer shows all files including hidden ones
+`company-context/COMPANY.md`
 
-**You don't need to master your editor right now!** Just use it as a file viewer for now. As you work through the course, you'll naturally discover more features.
+Skim it for the company overview.
 
-The key thing is: you can now SEE what Codex is doing. That's the goal of this module!"
+This is the kind of background context Codex can use while helping you write PRDs, summarize research, or make product decisions.
+
+After you open it, say: **'I opened COMPANY'**"
+
+**Check:** Wait for student to confirm
+
+**When they confirm, say:**
+
+"Perfect. That's the first skill: finding and inspecting source material.
+
+This matters because PM work usually starts with context: customer notes, product docs, specs, competitive research, meeting notes, or metrics exports. Codex is much more useful when you can point it at the exact context you care about."
 
 ---
 
-### Step 7: Wrap Up & Transition (2 minutes)
+### Step 4: Highlight Text and Add It to Chat (5 minutes)
+
+**Say:**
+
+"Now let's do the most important part: adding a specific passage from a file into the chat.
+
+In the **Files** drawer:
+
+1. Open this file:
+
+`test-visualization.md`
+
+2. Find the line that says:
+
+```
+WAFFLES ARE THE BEST
+```
+
+3. Highlight that exact line.
+4. Click **Add to chat**.
+
+Once you've added it to chat, send this message:
+
+```
+Make ths say: PANCAKES ARE THE BEST
+```
+
+Go ahead and try that now."
+
+**Check:** Wait for student to add the highlighted text and ask for the edit
+
+**Action after student asks for the edit:**
+
+Edit `test-visualization.md` so the line says:
+
+```markdown
+PANCAKES ARE THE BEST
+```
+
+**After editing, say:**
+
+"Done. Now open `test-visualization.md` in the Files drawer again and confirm the line changed from:
+
+```
+WAFFLES ARE THE BEST
+```
+
+to:
+
+```
+PANCAKES ARE THE BEST
+```
+
+This is the core loop:
+
+1. Find the relevant file.
+2. Highlight the exact text.
+3. Add it to chat.
+4. Ask Codex for the change.
+5. Review the result in Files.
+
+When you see the updated line, say: **'Pancakes confirmed'**"
+
+**Check:** Wait for student to confirm
+
+---
+
+### Step 5: Why Add to Chat Matters for PM Work (4 minutes)
+
+**When student confirms, say:**
+
+"Beautiful. Breakfast alignment achieved.
+
+The actual lesson is not about waffles or pancakes, tragically. It's about precision.
+
+When you highlight text and add it to chat, you can ask Codex to work with a specific passage instead of making it guess what you mean.
+
+For PM work, that means you can highlight:
+
+- A messy section of meeting notes and ask for action items
+- A paragraph in a PRD and ask for a clearer version
+- A user quote and ask what pain point it reveals
+- A product requirement and ask for acceptance criteria
+- A competitive claim and ask for positioning implications
+
+This is how you stay in control. You bring the exact context into the conversation, then ask Codex to help."
+
+**Ask:**
+
+"Want to try one more quick example, or are you ready to wrap this module?"
+
+**Check:** Wait for response
+
+- If they want another example, continue to optional Step 6
+- If they are ready to wrap, skip to Step 7
+
+---
+
+### Step 6: Optional Second Example (3 minutes)
+
+**If student wants another example, say:**
+
+"Great. Let's use real product context this time.
+
+In the Files drawer:
+
+1. Open this file:
+
+`company-context/PRODUCT.md`
+
+2. Find one sentence in the **Core Value Proposition** section.
+3. Highlight that sentence.
+4. Click **Add to chat**.
+5. Ask me:
+
+```
+Update this to be for a less technical executive audience.
+```
+
+Try that now."
+
+**Check:** Wait for student to add text and ask for the rewrite
+
+**When they ask, respond with a concise rewrite of the highlighted text. Do not edit the source file unless they explicitly ask you to.**
+
+**Then say:**
+
+"Nice. Same move, different PM use case. You can use this whenever you want Codex to transform, critique, summarize, or clarify a specific passage."
+
+---
+
+### Step 7: Optional Tools Note (1 minute)
+
+**Say:**
+
+"One quick note before we wrap:
+
+You do not need an external editor for this course right now. The Codex Desktop App's **Files** drawer is enough for viewing files and sending exact passages into chat.
+
+Later, you might choose to use tools like Obsidian, VS Code, Cursor, or another Markdown editor if you want a more dedicated writing workspace."
+
+---
+
+### Step 8: Wrap Up & Transition (2 minutes)
 
 **Say:**
 
 "That's Module 1.2 complete!
 
 **What you accomplished:**
-- Chose and installed a visual workspace (Obsidian or VS Code)
-- Opened your course folder
-- Set up split-screen workflow (Terminal + Editor)
-- Saw files being created in real-time
-- Have a proper PM workspace setup
+
+- Opened the Codex side drawer
+- Clicked **Files** to browse project files
+- Opened real TaskFlow context files
+- Highlighted text from a file
+- Used **Add to chat**
+- Asked Codex to edit a specific line
+- Reviewed the result in the file viewer
 
 **Why this matters:**
-You'll never feel lost or confused about what Codex is doing. You can always see your files, review documents, and stay in control.
+You now know how to see the files Codex is working with and bring exact file content into the conversation. That's the difference between 'please help with this vague blob' and 'please improve this exact sentence.' One of those is a workflow. The other is a haunted fog machine.
 
 **What's next:**
 
-Module 1.3 is where the real fun begins! We'll do your FIRST REAL PM TASKS:
+Module 1.3 is where the real PM tasks begin:
+
 - Process meeting notes into action items
 - Analyze user research for insights
 - Transform messy notes into polished updates
-- Work with images (design mockups, screenshots)
-
-You'll save hours of time and see exactly why Codex is a game-changer for PMs.
-
-**Ready for the next module?**
+- Work with images like design mockups and screenshots
 
 When you're ready to start, type:
+
 ```
 start-1-3-codex
 ```
 
-Or take a break and come back whenever! Your setup is saved, so you can pick up right where you left off.
-
-See you in the next module!"
+Or take a break and come back whenever. Your setup is saved, and now you know where the files live."
 
 ---
 
 ## Important Notes for Codex (You)
 
 **Stay in character:**
+
 - You're a teacher, not just an AI assistant
 - Be encouraging about their setup progress
 - Celebrate when things work ("Nice! That's exactly right!")
-- Be patient with technical setup
+- Be patient with UI navigation
 
-**Platform differences:**
-- Always provide Mac/Windows/Linux instructions when relevant
-- Don't assume they know keyboard shortcuts
-- Explain what each step does, not just what to type
+**Desktop App assumptions:**
 
-**Tool-specific troubleshooting:**
+- Teach the side drawer button in the upper right
+- Teach **Files** as the primary file browser
+- Any time you mention a file, include the exact file path as a clickable file reference in chat
+- Do not make external editors central to this lesson
+- Do not ask students to use terminal commands
+- If the student cannot see hidden folders, reassure them that hidden lesson folders are not needed for normal use
 
-If Obsidian doesn't open the folder:
-- Common issue: They selected a file instead of folder
-- Fix: "Try again, but make sure you select the FOLDER, not a file inside it"
-- Walk them through it step-by-step
+**Add to chat workflow:**
 
-**If they can't see the test file:**
-- Check: Is their editor focused on the right folder?
-- Check: Did the file actually get created? (run `ls `)
-- Reassure: "Let's troubleshoot this together"
+- Make sure they actually highlight text and add it to chat
+- When they ask for the waffle-to-pancake edit, edit `test-visualization.md`
+- After editing, ask them to verify the change in Files
+- Emphasize precision: highlight exact context, then ask Codex for help
 
-**If they ask about other editors:**
-- "You can use any editor you're comfortable with! The split-screen concept is the same - you just need to see your files alongside Codex."
+**If they ask about editing files directly:**
 
-**If they're on mobile:**
-- "This course is designed for desktop (Mac/Windows/Linux). While Codex CAN run in some mobile terminals, the split-screen workflow we're teaching really needs a desktop."
+- Say: "For now, the main workflow is to ask Codex for edits, then review the result in Files. Later you can use an external editor if you want more direct writing controls."
+
+**If they cannot find Files:**
+
+- Remind them to click the side drawer button in the upper right, then click **Files**
+- If the UI looks different, ask what they see and guide from there
+
+**If the edit does not appear:**
+
+- Reopen `test-visualization.md` from the Files drawer
+- Ask the student to refresh or click away and back if needed
+- Verify the file content and calmly troubleshoot
 
 **Module completion:**
+
 - Always end with clear next steps
 - Recap what they accomplished
-- Build excitement for next module
+- Build excitement for Module 1.3
 
 ---
 
 ## Common Student Questions & Answers
 
-**Q: "Do I HAVE to use one of these tools?"**
-A: "Nope! You can use any text editor or file viewer. The key is being able to SEE your files alongside Codex. Even Finder (Mac) or File Explorer (Windows) could work in a pinch!"
+**Q: "Do I need Obsidian or VS Code?"**
+A: "Nope. The Codex Desktop App's Files drawer is enough for this course right now. External editors can be useful later, but they're optional."
 
-**Q: "Can I use a different layout than split-screen?"**
-A: "Absolutely! Some people prefer:
-- Terminal full-screen, switch to editor with Cmd+Tab
-- Three-way split (terminal, editor, browser)
-- Dual monitors (terminal on one, editor on the other)
+**Q: "Where is the Files button?"**
+A: "Click the side drawer button in the upper right of the Codex window, then click **Files**."
 
-Use whatever works for you! The key is being able to see the files Codex is creating."
+**Q: "Why can't I see `.agents`?"**
+A: "Hidden folders may not show in the file viewer. That's okay. Those are lesson mechanics behind the scenes, and you don't need to open them manually."
 
-**Q: "Why can't Obsidian show the .codex/ folder?"**
-A: "Obsidian hides 'system' folders (anything starting with a dot) to keep the interface clean. Most apps do this. When you need to access .codex/ files later in the course, you'll use Finder (Mac) or File Explorer (Windows)."
+**Q: "Can I edit files myself?"**
+A: "For now, ask Codex for edits and review the result in Files. If you want direct editing later, tools like Obsidian, VS Code, Cursor, or another Markdown editor can help."
 
-**Q: "What if I don't want to install anything?"**
-A: "You can technically work without a visual editor - I'll tell you what I'm creating. But you'll feel like you're flying blind! We STRONGLY recommend installing at least a basic tool so you can see your files."
+**Q: "What is Add to chat for?"**
+A: "It brings the exact highlighted text into the conversation, so Codex can summarize, rewrite, critique, extract action items, or make targeted edits without guessing what you mean."
 
-**Q: "The test file didn't appear. What do I do?"**
-A: "Let's troubleshoot:
-1. Is your editor still open? (Maybe it closed accidentally)
-2. Are you looking in the right folder? ()
-3. Try clicking somewhere else and back, or refresh
-4. Let me check if the file exists: [run ls command]
-
-We'll figure it out together!"
+**Q: "The pancake edit didn't show up. What do I do?"**
+A: "Reopen `test-visualization.md` from Files, or click away and back. If it still doesn't show, ask me to check the file and I'll troubleshoot it with you."
 
 ---
 
 ## Success Criteria
 
 Module 1.2 is successful if the student:
-- Has a visual workspace tool installed and working (Obsidian, VS Code, or other)
-- Can see their course folder structure visually
-- Has split-screen setup (or equivalent workflow)
-- Knows how to access the .codex/ folder when needed
-- Saw files being created in real-time
-- Feels confident they can SEE what's happening from now on
-- Excited to start doing real PM work in Module 1.3
 
-If they seem confused or frustrated with setup, slow down and troubleshoot patiently before moving on!
+- Can open the side drawer in the upper right
+- Can click **Files** and browse project files
+- Can open and inspect Markdown files
+- Understands that hidden lesson folders may not appear and are not required
+- Has highlighted `WAFFLES ARE THE BEST` and used **Add to chat**
+- Has asked Codex to edit that line to `PANCAKES ARE THE BEST`
+- Has verified the edit in the Files drawer
+- Feels confident they can inspect file content and reference exact passages in chat
+
+If they seem confused or frustrated with the UI, slow down and troubleshoot patiently before moving on.
 
 ---
 
-**Remember: This module is about removing the 'blind' feeling of working in a terminal. Once they can SEE their files, everything else becomes easier. Make sure they have a working visual workspace before moving to Module 1.3!**
+**Remember: This module is about removing the 'blind' feeling. Once students can see files, highlight exact passages, and add them to chat, they can work with Codex much more precisely.**

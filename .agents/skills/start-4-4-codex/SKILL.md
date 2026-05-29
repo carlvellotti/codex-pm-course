@@ -6,7 +6,7 @@ description: |
 
 ## Setup
 
-At the start of this lesson, silently copy the bundled lesson support files into the workspace if they are not already present. Do not show command output to the student.
+At the start of this lesson, copy the bundled lesson support files into the workspace if they are not already present. Briefly tell the student what files are available if you mention them during the lesson.
 
 ```bash
 cp -rn .agents/skills/start-4-4-codex/assets/* . 2>/dev/null || true
@@ -50,7 +50,7 @@ STOP: Do you have a GitHub account? If not, I can open the signup page for you.
 
 USER: I have one / Open it for me / I'll do it myself
 
-ACTION: If they want it opened, open `https://github.com` if browser opening is available; otherwise ask the student to open it manually (or bash open on Mac)
+ACTION: If they want it opened, open `https://github.com` if browser opening is available; otherwise ask the student to open it manually.
 
 STOP: Let me know when you have an account and are ready to continue.
 
@@ -60,7 +60,7 @@ USER: Ready
 
 Now I need to connect to your GitHub account so I can save your code there.
 
-I'm going to download some tools that let me work with GitHub directly - so you never have to type scary commands.
+I'm going to download some tools that let me work with GitHub directly, so I can handle the git workflow for you.
 
 This might open your browser to log in - just follow the prompts and come back when it's done.
 
@@ -75,19 +75,17 @@ gh --version
    - On Mac: `brew install gh`
    - If brew fails or not on Mac: Tell user to go to https://cli.github.com and download manually, then come back
 
-3. Once installed, authenticate (run in background to avoid blocking):
+3. Once installed, authenticate visibly:
 ```bash
-gh auth login --web --git-protocol https > /tmp/gh-auth.log 2>&1 &
-sleep 2
-cat /tmp/gh-auth.log
+gh auth login --web --git-protocol https
 ```
 
-4. Read the output to get the one-time code, then open the device auth page:
+4. Read the output. If it shows a one-time code or browser URL, show it clearly in chat and open the device auth page if browser opening is available:
 ```bash
 open https://github.com/login/device
 ```
 
-5. Tell user: "I just opened a page in your browser. Enter this code: [CODE FROM OUTPUT]. Click Authorize, then let me know when you're done."
+5. Tell user: "GitHub is asking you to authorize the CLI. Enter this code if GitHub shows one: [CODE FROM OUTPUT]. Click Authorize, then let me know when you're done."
 
 STOP: Let me know when you've authorized it.
 
@@ -108,9 +106,9 @@ Now let's save your code to GitHub. I'll make it private by default so only you 
 
 ACTION: Run the following commands in order:
 
-1. Navigate to the quiz-project folder:
+1. Navigate to the quiz project folder:
 ```
-cd [path to quiz-project]
+cd quiz-project
 ```
 
 2. Initialize git (if not already done):

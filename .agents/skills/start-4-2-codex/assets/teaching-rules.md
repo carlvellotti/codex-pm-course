@@ -78,12 +78,12 @@ When creating modules with example files (meeting notes, user research, rough no
 ✅ **DO:**
 - Use .md file extension for all example files
 - Examples: `meeting-notes-1.md`, `rough-feature-notes.md`, `user-interview.md`
-- Reason: Markdown editors (Obsidian, VS Code) can display .md files but may not display .txt files properly
+- Reason: Markdown files display cleanly in the Codex Desktop App's Files drawer and in optional external editors
 
 ❌ **DON'T:**
 - Use .txt file extension for example files
 - Examples: `meeting-notes-1.txt`, `rough-feature-notes.txt`
-- This makes files invisible or improperly formatted in markdown editors, breaking the visualization workflow taught in Module 1.2
+- This can make files harder to inspect or format, weakening the visualization workflow taught in Module 1.2
 
 **When referencing files in teaching scripts:**
 - All file references should use .md extension

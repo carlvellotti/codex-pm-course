@@ -79,11 +79,15 @@ Ready to figure out what's wrong with TaskFlow's activation?"
 
 The first question: WHERE are users getting stuck in the activation funnel?
 
-We have activation funnel data exported from Mixpanel in `activation-funnel-q4.csv`. This shows the key steps users go through: Signup → First Task Created → First Task Completed → Invite Sent.
+We have activation funnel data exported from Mixpanel here:
+
+`activation-funnel-q4.csv`
+
+This shows the key steps users go through: Signup → First Task Created → First Task Completed → Invite Sent.
 
 I can read CSV files directly and analyze them for you - I'll calculate the drop-off rates at each funnel step and present the insights in a clean format.
 
-FYI – The data files are CSVs, not markdown files, so they won't render nicely in markdown editors like Obsidian. But I can read them, analyze them, and present the results to you in formatted tables. If you want to see the raw CSV yourself, you can open them in Excel, Google Sheets, or VS Code."
+FYI – CSV files may not be pleasant to read raw in **Files**, so I'll show the important rows, tables, and insights directly in chat. You can still open `activation-funnel-q4.csv` from **Files** if you want to inspect the raw data."
 
 **STOP: Ask user to say 'Analyze the activation funnel'**
 
@@ -126,7 +130,11 @@ Almost 3 out of 4 users create a task, but then 6 out of 10 abandon it before ma
 
 Let's validate our hypotheses with data.
 
-We have user survey responses in `user-survey-responses.csv` - 800 responses from recent signups. They answered questions about what confused them during onboarding and what they wish TaskFlow had.
+We have user survey responses here:
+
+`user-survey-responses.csv`
+
+That's 800 responses from recent signups. They answered questions about what confused them during onboarding and what they wish TaskFlow had.
 
 Let's see if the data supports your theory. I'll analyze the survey responses to understand WHY users are dropping off."
 
@@ -195,7 +203,11 @@ Let's create a problem analysis document that synthesizes everything we found: t
 
 **When student says 'Create the problem analysis document', say:**
 
-"I'll create a comprehensive problem analysis document for you now - `activation-problem-analysis.md`. This is the kind of doc you'd share with leadership to get alignment."
+"I'll create a comprehensive problem analysis document for you now:
+
+`activation-problem-analysis.md`
+
+This is the kind of doc you'd share with leadership to get alignment."
 
 **ACTION:**
 
@@ -209,9 +221,11 @@ Create `activation-problem-analysis.md` with:
 
 **Present it like this:**
 
-"Done! I've created `activation-problem-analysis.md` with our complete analysis.
+"Done! I've created:
 
-You can open it in your editor to see the full document. It includes:
+`activation-problem-analysis.md`
+
+Open it from **Files** to see the full document. It includes:
 - The problem (60% drop-off, quantified from funnel data)
 - Why it's happening (survey evidence: users overwhelmed, need examples)
 - Who it affects most (small teams - our target market)
@@ -261,7 +275,9 @@ Read `impact-estimation-framework.md` and extract key concepts to present.
 
 **Present it like this:**
 
-"Here's the impact estimation framework (I'm opening `impact-estimation-framework.md` for you):
+"Here's the impact estimation framework:
+
+`impact-estimation-framework.md`
 
 **The Formula:**
 ```
@@ -296,7 +312,7 @@ What is each incremental activation worth?
 **Three Scenarios Approach:**
 Always create pessimistic/realistic/optimistic scenarios to show the range of outcomes. This acknowledges uncertainty and helps leadership understand the risk.
 
-The full framework document has examples and a template. You should open `impact-estimation-framework.md` and skim it before we continue.
+The full framework document has examples and a template. Open `impact-estimation-framework.md` from **Files** and skim it before we continue.
 
 Take a minute to review the document, then we'll apply this framework to Guided Onboarding."
 
@@ -310,7 +326,11 @@ Take a minute to review the document, then we'll apply this framework to Guided 
 
 "Great! Now let's apply the framework to Guided Onboarding.
 
-I can analyze your usage data in `taskflow-usage-data-q4.csv` and build the impact model for you. I'll process the event data, calculate current rates, segment by company size, and build out the full ROI projection."
+I can analyze your usage data here:
+
+`taskflow-usage-data-q4.csv`
+
+I'll process the event data, calculate current rates, segment by company size, and build out the full ROI projection."
 
 **ACTION:**
 
@@ -365,7 +385,9 @@ Use this data to build the impact model, then create `guided-onboarding-impact-e
 - Year 1: $39k / $100k = 0.39x (not profitable yet)
 - 3-year LTV: $943k / $100k = 9.4x ROI 🎯
 
-I've created `guided-onboarding-impact-estimate.md` with the full analysis."
+I've created the full analysis here:
+
+`guided-onboarding-impact-estimate.md`"
 
 **STOP: Does that ROI seem good enough to justify building this?**
 
@@ -448,7 +470,9 @@ Include note about retention multiplier: activated users stay 2.5x longer (histo
 
 **Plus strategic value:** We can't scale if activation stays at 45%. This unblocks growth.
 
-I've saved all three scenarios to `guided-onboarding-roi-scenarios.md` for you.
+I've saved all three scenarios here:
+
+`guided-onboarding-roi-scenarios.md`
 
 This is the kind of analysis you'd present to leadership. Show them the range, be transparent about assumptions, and let them decide if the risk is acceptable."
 
@@ -472,7 +496,9 @@ So let's say they approve it. Your team spends 4 weeks building Guided Onboardin
 
 **Let's fast-forward 4 weeks:** The experiment has been running with 8,000 users (4,000 treatment, 4,000 control). Results are in.
 
-You've exported the data from LaunchDarkly into `onboarding-experiment-results.csv`.
+You've exported the data from LaunchDarkly here:
+
+`onboarding-experiment-results.csv`
 
 Time to find out: did our bet pay off?
 
@@ -777,7 +803,11 @@ This is the document you'd share with leadership and the team. It needs:
 - Expected impact if we ship
 - Next steps
 
-I'll create the experiment readout document for you now - `onboarding-experiment-readout.md`. This will synthesize all our findings into a polished document you can share with leadership."
+I'll create the experiment readout document for you now:
+
+`onboarding-experiment-readout.md`
+
+This will synthesize all our findings into a polished document you can share with leadership."
 
 **ACTION:**
 
@@ -803,7 +833,9 @@ Create `onboarding-experiment-readout.md` with:
 
 **Present it like this:**
 
-"Done! I've created `onboarding-experiment-readout.md` with the complete analysis.
+"Done! I've created:
+
+`onboarding-experiment-readout.md`
 
 **Executive Summary:**
 ✅ **SHIP to 100% for small teams (5-20 people)**
@@ -825,7 +857,7 @@ Create `onboarding-experiment-readout.md` with:
 - Monitor for 2 weeks
 - Start enterprise onboarding discovery
 
-You can open the file to see the full analysis with all the supporting data.
+Open the file from **Files** to see the full analysis with all the supporting data.
 
 **Phase 3 - Experiment Analysis: Complete!** ✓"
 
@@ -918,10 +950,10 @@ See you in the final module of Level 2!"
 - If student seems confused, ask if they have questions before moving forward
 
 **CSV file viewing:**
-- The data files are CSVs, not markdown files, so they won't render in markdown editors
+- The data files are CSVs, so they may not be pleasant to read raw in the Codex Desktop App's Files drawer
 - Mention this the first time you read a CSV (already in script above)
 - You'll read and present the data in formatted tables/summaries
-- If students ask about viewing raw CSVs, tell them to use Excel, Google Sheets, or VS Code
+- If students ask about viewing raw CSVs, tell them they can open the CSV from **Files** or use a spreadsheet tool for a nicer view
 
 **Data generation context:**
 - The CSV files contain fabricated but realistic data
