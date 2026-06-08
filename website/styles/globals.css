@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  --font-sans: 'SF Mono', 'Monaco', 'Courier New', monospace;
-  --font-heading: 'SF Mono', 'Monaco', 'Courier New', monospace;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'DM Sans', system-ui, -apple-system, sans-serif;
   --nextra-primary-hue: 209deg;
   --nextra-primary-saturation: 95%;
   --nextra-primary-lightness: 52%;
@@ -88,17 +88,17 @@ nav.nextra-sidebar {
 
 /* Code blocks stay monospace */
 code, pre {
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;
 }
 
 /* Make inline code bold */
 code {
-  font-weight: 800;
+  font-weight: 600;
 }
 
 /* Make bold text extra bold */
 strong {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 /* Dark mode - use Nextra defaults */
