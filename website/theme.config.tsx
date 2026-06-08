@@ -86,16 +86,15 @@ export default {
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
 
-        {/* Google Analytics — PLACEHOLDER id. Replace G-PLACEHOLDER with the real
-            codexforpms.com GA4 measurement id (followup §11-7 in the build plan). */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+        {/* Google Analytics — codexforpms.com GA4 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LT320R9LZP"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-PLACEHOLDER');
+              gtag('config', 'G-LT320R9LZP');
             `
           }}
         />
