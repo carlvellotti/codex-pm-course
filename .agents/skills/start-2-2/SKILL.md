@@ -936,7 +936,7 @@ Next, you'll learn how to use Codex for strategic thinking:
 - Product positioning and messaging
 - Go-to-market strategy development
 
-When you're ready, type **`start-2-3`** to begin Module 2.3: Product Strategy!
+When you're ready, type **`/start 2 3`** to begin Module 2.3: Product Strategy!
 
 See you in the final module of Level 2!"
 

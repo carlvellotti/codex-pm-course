@@ -193,8 +193,8 @@ Next, I'll explain how this course is structured. Just say: **'How does this wor
 
 Each module starts with a slash command. For example:
 
-- `start-1-1` starts Module 1.1 (this one!)
-- `start-1-2` starts Module 1.2 (next one)
+- `/start 1 1` starts Module 1.1 (this one!)
+- `/start 1 2` starts Module 1.2 (next one)
 - And so on...
 
 When you type the command, I load that module's teaching script and guide you through it.
@@ -271,7 +271,7 @@ The next module is about **Visualizing Files** - how to see files in an editor w
 When you're ready, type:
 
 ```
-start-1-2
+/start 1 2
 ```
 
 Or take a break and come back later. Your progress is saved!

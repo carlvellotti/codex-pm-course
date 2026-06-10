@@ -536,7 +536,7 @@ Think: Agents = temp contractors, Sub-Agents = your permanent specialized team
 
 **Module 1.5 preview:** You'll build team members like 👨‍💻 Engineer, 💼 Executive, 👤 User Researcher - each with their own personality and expertise you can call on anytime.
 
-Ready to build your team? Type `start-1-5` when ready, or take a break!
+Ready to build your team? Type `/start 1 5` when ready, or take a break!
 
 See you in Module 1.5! 👋"
 

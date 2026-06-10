@@ -4,11 +4,11 @@ export default {
     description: 'What Codex does for PMs and what you\'ll learn in this course'
   },
   'installation': {
-    title: '0.2: Installing Codex',
-    description: 'Install the Codex CLI, sign in, and pick the right plan'
+    title: '0.2: Get the Codex App',
+    description: 'Download the Codex app, sign in, and pick the right plan'
   },
   'opening-course-folder': {
     title: '0.3: Opening the Course',
-    description: 'Download the course repo and run your first lesson in Codex'
+    description: 'Download the course files and run your first lesson in the Codex app'
   }
 }

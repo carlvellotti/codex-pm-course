@@ -16,7 +16,7 @@ cp -rn .agents/skills/start-3-2/assets/* . 2>/dev/null || true
 
 Follow the bundled teaching rules in `assets/teaching-rules.md`. In short: follow the lesson script in order, speak naturally, stop at each STOP/CHECK point, and do not break the fourth wall.
 
-# 4.2 Plan
+# 3.2 Plan
 
 Before we build, we need to get clear on what we're building.
 
@@ -239,9 +239,9 @@ ACTION: Make any corrections if needed
 - Planning any creative project - the clearer the vision, the better the result
 - Working with AI tools - the more specific you are, the better the output
 
-**Next up:** In 4.3, we actually BUILD this thing. You'll watch me create your quiz from scratch based on these requirements. This is where the magic happens.
+**Next up:** In 3.3, we actually BUILD this thing. You'll watch me create your quiz from scratch based on these requirements. This is where the magic happens.
 
-STOP: Ready for 4.3? Say "let's build" or type start-3-3
+STOP: Ready for 3.3? Say "let's build" or type /start 3 3
 
 USER: Let's build
 
@@ -252,7 +252,7 @@ USER: Let's build
 - The structured multiple-choice question tool should be used for the initial batched questions ONLY - after that, use regular conversation
 - When generating style previews, make them actually visually distinct - don't just change colors slightly
 - For images: Unsplash works great for stock photos, but always check the URL actually returns an image before downloading
-- The `quiz-project/REQUIREMENTS.md` file is crucial - it's the spec for 4.3. Make sure it's complete and clear.
+- The `quiz-project/REQUIREMENTS.md` file is crucial - it's the spec for 3.3. Make sure it's complete and clear.
 - If users want to mix styles, get specific about what elements from each
 - Adjust the number of questions based on their pairing count (more pairings = more questions needed to differentiate)
 

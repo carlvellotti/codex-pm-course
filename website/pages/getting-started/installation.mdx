@@ -1,71 +1,46 @@
 ---
-title: '0.2: Installing Codex'
-description: 'Install the OpenAI Codex CLI on Mac or Windows, sign in with your ChatGPT account, and choose the right plan for PM work.'
-keywords: 'install codex, codex cli, openai codex setup, download codex, codex sign in, codex pricing, codex plans'
+title: '0.2: Get the Codex App'
+description: 'Download the OpenAI Codex desktop app for Mac or Windows, sign in with your ChatGPT account, and choose the right plan for PM work.'
+keywords: 'codex app, download codex, codex desktop app, openai codex setup, codex sign in, codex pricing, codex plans'
 ---
 
-# Module 0.2: Installing Codex
+# Module 0.2: Get the Codex App
 ## Reference Guide
 
-- **Time to Complete:** 15 minutes
-- **Prerequisites:** Mac, Windows, or Linux + a ChatGPT account
+- **Time to Complete:** 5 minutes
+- **Prerequisites:** Mac or Windows + a ChatGPT account
 
 ## 📖 Overview
 
-You'll install the **Codex CLI** (the version of Codex that runs in your terminal) and sign in with your ChatGPT account. That's it — once Codex is installed and signed in, you're ready to open the course.
+You'll download the **Codex app** and sign in with your ChatGPT account. That's it — it installs like any other app, and once you're signed in you're ready to open the course.
 
-**Key takeaway:** Install Codex, run `codex`, choose **Sign in with ChatGPT**.
+**Key takeaway:** Download the app from [openai.com/codex](https://openai.com/codex/), open it, choose **Sign in with ChatGPT**.
 
-## Step 1: Install the Codex CLI
+## Step 1: Download the App
 
-Pick whichever matches your setup. (A "terminal" is the Terminal app on Mac, or PowerShell on Windows — you'll only need to paste one line.)
+**[⬇️ Get Codex at openai.com/codex →](https://openai.com/codex/)**
 
-### Mac
+Click the download button for your platform — Codex is available for **Mac** and **Windows**.
 
-**Option A — Homebrew (recommended if you have it):**
-```bash
-brew install --cask codex
-```
+{/* screenshot: codex-app-download.png — the openai.com/codex download page */}
 
-**Option B — install script:**
-```bash
-curl -fsSL https://chatgpt.com/codex/install.sh | sh
-```
+## Step 2: Install and Open It
 
-**Option C — npm** (requires [Node.js](https://nodejs.org) 20+):
-```bash
-npm install -g @openai/codex
-```
+It installs like any other app:
 
-### Windows
+- **Mac:** open the downloaded file and drag **Codex** into your Applications folder, then launch it.
+- **Windows:** run the installer and follow the prompts, then launch Codex.
 
-**PowerShell one-liner:**
-```powershell
-powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"
-```
+## Step 3: Sign In
 
-Or, with [Node.js](https://nodejs.org) 20+ installed:
-```powershell
-npm install -g @openai/codex
-```
+1. When Codex opens, choose **"Sign in with ChatGPT"** (recommended) and complete the login in your browser.
+2. That's it — Codex now uses your ChatGPT subscription.
 
-**Verify it installed** by running:
-```bash
-codex --version
-```
-
-## Step 2: Sign In
-
-1. In your terminal, run:
-   ```bash
-   codex
-   ```
-2. Choose **"Sign in with ChatGPT"** (recommended) and complete the login in your browser.
-3. That's it — Codex now uses your ChatGPT subscription.
+{/* screenshot: codex-app-signin.png — the app sign-in screen */}
 
 > Prefer pay-as-you-go? You can sign in with an OpenAI **API key** instead (billed per use). For this course, signing in with ChatGPT is simpler.
 
-## Step 3: Pick a Plan
+## Step 4: Pick a Plan
 
 Codex is included across ChatGPT plans. You can start free; most PMs are comfortable on **Plus**.
 
@@ -80,36 +55,31 @@ Usage limits and model availability change often — check the **[current pricin
 
 ## A Note on Permissions
 
-The first time Codex makes changes, it asks for permission. Codex has three modes (switch anytime with `/permissions`):
+The first time Codex makes changes, it asks for permission. By default it works in **Auto** mode — it reads, edits, and runs tasks **inside your current project folder**, and asks before touching anything outside it. That's exactly right for this course.
 
-- **Auto** *(default)* — reads, edits, and runs commands **inside your current folder**; asks before touching anything outside it. This is the right mode for the course.
-- **Read Only** — looks but doesn't change anything until you approve.
-- **Full Access** — works without asking. Use sparingly.
-
-Codex always shows a transcript of what it did, so nothing happens silently.
+Codex always shows you what it did, so nothing happens silently. You can review every change.
 
 ## 🐛 Troubleshooting
 
-**`codex: command not found` after install**
-- Close and reopen your terminal so it picks up the new command.
-- If you used npm, make sure Node 20+ is installed (`node --version`).
-
-**npm install fails**
-- Update Node.js to version 20 or later, then retry. Or use the Homebrew / install-script option instead (those don't need Node).
-
 **Sign-in browser window doesn't open**
-- Copy the URL Codex prints in the terminal and paste it into your browser manually.
+- Quit and reopen the Codex app, then try signing in again.
+
+**Not sure which plan you're on**
+- Check [chatgpt.com](https://chatgpt.com) → Settings → Subscription. Any plan works for starting the course.
+
+**The app won't open (Mac)**
+- If macOS blocks it, go to System Settings → Privacy & Security and click **Open Anyway**.
 
 ## 🚀 What's Next?
 
-**Module 0.2 complete** — Codex is installed and you're signed in.
+**Module 0.2 complete** — the Codex app is installed and you're signed in.
 
-**Next: Module 0.3 — Opening the Course.** You'll download the course files, open them in Codex, and run your first lesson.
+**Next: Module 0.3 — Opening the Course.** You'll download the course files, open them in the Codex app, and run your first lesson.
 
 **[Go to Module 0.3: Opening the Course →](/getting-started/opening-course-folder)**
 
 ## 📚 Resources
 
-- [Codex CLI docs](https://developers.openai.com/codex/cli/) — official install + sign-in guide
+- [OpenAI Codex](https://openai.com/codex/) — download page
+- [Codex app docs](https://developers.openai.com/codex/app) — official guide to the app
 - [Codex pricing](https://developers.openai.com/codex/pricing) — current plans and limits
-- [Codex CLI features](https://developers.openai.com/codex/cli/features) — permission modes and first run

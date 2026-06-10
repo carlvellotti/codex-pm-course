@@ -736,7 +736,7 @@ You just finished the entire **PM Workflows** level. Let's step back and see wha
 
 🎉 You've completed ALL of Level 2: PM Workflows! You've mastered practical PM applications with Codex.
 
-When you're ready, type **start-3-1** to continue to Module 3: Vibe Coding!
+When you're ready, type **/start 3 1** to continue to Module 3: Vibe Coding!
 
 Get ready for Level 3!
 

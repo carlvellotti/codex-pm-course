@@ -16,7 +16,7 @@ cp -rn .agents/skills/start-3-4/assets/* . 2>/dev/null || true
 
 Follow the bundled teaching rules in `assets/teaching-rules.md`. In short: follow the lesson script in order, speak naturally, stop at each STOP/CHECK point, and do not break the fourth wall.
 
-# 4.4 GitHub
+# 3.4 GitHub
 
 Right now, your quiz only exists on your computer.
 
@@ -155,9 +155,9 @@ There's a lot more to GitHub - collaboration, version history, branching - and t
 
 That's exactly what we're doing next.
 
-**Next up:** In 4.5, we put your quiz on the internet! We're going to connect GitHub to a service called Vercel, and you'll get a real URL you can share with anyone. This is the finish line.
+**Next up:** In 3.5, we put your quiz on the internet! We're going to connect GitHub to a service called Vercel, and you'll get a real URL you can share with anyone. This is the finish line.
 
-STOP: Ready to go live? Say "let's go" or type start-3-5
+STOP: Ready to go live? Say "let's go" or type /start 3 5
 
 USER: Let's go
 

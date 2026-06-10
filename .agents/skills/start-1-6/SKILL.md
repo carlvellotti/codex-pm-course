@@ -424,7 +424,7 @@ From here, you have two good paths:
 When you're ready, type:
 
 ```
-start-2-1
+/start 2 1
 ```
 
 **Vibe Coding** - Build and ship a real web app with Codex.
@@ -432,7 +432,7 @@ start-2-1
 When you're ready, type:
 
 ```
-start-3-1
+/start 3 1
 ```"
 
 ---

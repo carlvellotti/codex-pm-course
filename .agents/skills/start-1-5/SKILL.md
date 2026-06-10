@@ -320,7 +320,7 @@ Codex will always remember your product context, personas, writing style, and bu
 
 No more re-explaining every session."
 
-**STOP: When ready for Module 1.6 say "start-1-6"**
+**STOP: When ready for Module 1.6 say "/start 1 6"**
 
 Module 1.5 is now complete. Wait for student to either start Module 1.6 or end the session.
 

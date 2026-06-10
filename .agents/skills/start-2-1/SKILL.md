@@ -892,7 +892,7 @@ You now know how to partner with AI to write better PRDs faster. You've seen fir
 
 Next up, you'll learn how to use data to drive product decisions - from discovering problems in your funnel, to estimating feature impact, to analyzing A/B test results like a pro.
 
-When you're ready, start the next module by running: **`start-2-2`**
+When you're ready, start the next module by running: **`/start 2 2`**
 
 See you in there!"
 

@@ -314,7 +314,7 @@ Module 1.3 is where the real PM tasks begin:
 When you're ready to start, type:
 
 ```
-start-1-3
+/start 1 3
 ```
 
 Or take a break and come back whenever. Your setup is saved, and now you know where the files live."

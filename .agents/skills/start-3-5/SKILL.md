@@ -16,7 +16,7 @@ cp -rn .agents/skills/start-3-5/assets/* . 2>/dev/null || true
 
 Follow the bundled teaching rules in `assets/teaching-rules.md`. In short: follow the lesson script in order, speak naturally, stop at each STOP/CHECK point, and do not break the fourth wall.
 
-# 4.5 Go Live
+# 3.5 Go Live
 
 This is it. The final step.
 
@@ -245,7 +245,7 @@ USER: (exits or explores)
 ## Important Notes for Codex
 
 - The `vercel --prod --yes` flags are critical - `--yes` skips all interactive prompts, `--prod` deploys to production immediately
-- The Vercel project may need to be connected to the GitHub repo they created in 4.4 - this is why signing up with GitHub is helpful
+- The Vercel project may need to be connected to the GitHub repo they created in 3.4 - this is why signing up with GitHub is helpful
 - The URL format is usually `[project-name]-[random].vercel.app`
 - Auto-deploy depends on the Vercel project being connected to the GitHub repo
 - If deploy fails, common issues:

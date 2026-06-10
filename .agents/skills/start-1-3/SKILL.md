@@ -688,7 +688,7 @@ This is the game-changer that makes Codex way more powerful than regular chatbot
 When you're ready, type:
 
 ```
-start-1-4
+/start 1 4
 ```
 
 Or take a break and come back later!

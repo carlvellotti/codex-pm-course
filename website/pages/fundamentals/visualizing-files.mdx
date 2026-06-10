@@ -1,7 +1,7 @@
 ---
 title: '1.2: Visualizing Files'
-description: 'Set up a visual workspace alongside Codex so you can watch files being created and edited in real time as you work.'
-keywords: 'codex, openai codex, codex for product managers, visual workspace, obsidian, vs code, split screen'
+description: 'Use the Files drawer in the Codex app to watch files being created and edited in real time as you work.'
+keywords: 'codex, openai codex, codex app, codex files drawer, codex for product managers, visual workspace, view files codex'
 ---
 
 # Module 1.2: Visualizing Files
@@ -9,48 +9,44 @@ keywords: 'codex, openai codex, codex for product managers, visual workspace, ob
 ## Reference Guide
 
 - **Time to Complete:** 10-15 minutes
-- **Prerequisites:** Module 1.1 complete; course folder open in your terminal
+- **Prerequisites:** Module 1.1 complete; course folder open in the Codex app
 
-> **Start this lesson interactively:** Type `start-1-2` in Codex to set up your workspace step-by-step.
+> **Start this lesson interactively:** Type `/start 1 2` in the Codex app to set up your workspace step-by-step.
 
 ## Overview
 
-Codex runs in your terminal, which is powerful but can feel like flying blind if you can't *see* your files. This lesson sets up a **visual workspace** — a side-by-side layout where you watch files appear and change in real time as Codex works.
+Codex does real work with real files — but that only feels trustworthy when you can *see* those files. This lesson shows you the **Files drawer**, the built-in file viewer in the Codex app, so you can watch documents appear and change in real time as Codex works.
 
-**Key takeaway:** Pair your terminal (where you talk to Codex) with a file viewer (where you see the results). You'll never wonder "what just happened?" again.
+**Key takeaway:** Chat with Codex on one side, watch the results in the Files drawer on the other. You'll never wonder "what just happened?" again.
 
 ## Why Visualization Matters
 
-With a visual workspace open, you can:
+With the Files drawer open, you can:
 
 - See your entire project structure at a glance
 - Watch PRDs, research notes, and summaries appear as Codex creates them
-- Edit files yourself when you want to
-- Review documents without switching apps
+- Inspect the source material Codex is using
+- Point Codex at exact passages instead of vaguely waving at a whole file
 
-## Choose a File Viewer
+## Open the Files Drawer
 
-You have two main options. Either works — pick what fits how you already work.
+Everything you need is built into the Codex app — no external editor required.
 
-| Tool | Best for | Notes |
-|------|----------|-------|
-| **Obsidian** | PMs working mostly with Markdown docs | Free, beginner-friendly, great for notes. Cannot show hidden folders (anything starting with a dot) — use Finder/Explorer for those. Download at [obsidian.md](https://obsidian.md/) |
-| **VS Code** | Anyone who wants more power, or already codes | Shows hidden folders. Press `Cmd+Shift+.` (Mac) to reveal them. |
+1. Look in the **upper right** of the Codex window.
+2. Click the **side drawer button** (a small layout/sidebar control).
+3. In the drawer that opens, click **Files**.
 
-### Opening your course folder
+You'll see the project file tree for the course — folders like `company-context/` and any files Codex creates as you work.
 
-In either tool, open your course folder as the workspace (Obsidian calls this a "vault"; VS Code uses File → Open Folder). If you're not sure where the folder lives, ask Codex — it can print the full path for you. You should then see folders like `company-context/` and your lesson files in the sidebar.
+{/* screenshot: codex-app-files-drawer.png — the side drawer open on Files with the course file tree */}
 
-## Set Up Split-Screen
+> **Note:** Hidden folders like `.agents` may not show up by default. That's fine — they're lesson mechanics behind the scenes. Focus on the visible project files.
 
-The most common way to work with Codex:
+## Browse Like a PM
 
-- **Left half of your screen:** the terminal running Codex
-- **Right half of your screen:** your file viewer (Obsidian or VS Code)
+Click any file in the tree to open and read it. Try `company-context/COMPANY.md` — it's the company background Codex uses while helping you write PRDs, summarize research, and make product decisions.
 
-Resize and position the two windows side by side. Now you can chat with Codex on the left and watch the files it creates and edits on the right, all at once.
-
-Other layouts work too — terminal full-screen with quick app-switching, a three-way split with a browser, or dual monitors. The only requirement is that you can see your files while Codex works.
+Want to act on a specific passage? Highlight the text and use **Add to chat** — it brings the exact highlighted text into the conversation, so Codex can summarize, rewrite, critique, or edit it without guessing what you mean.
 
 ## The Workflow From Here On
 
@@ -58,22 +54,20 @@ This is the loop you'll use for the rest of the course:
 
 1. You ask Codex to do something (summarize notes, draft a PRD, analyze research).
 2. Codex does it.
-3. You **see** it happen in your file viewer.
-4. You review, edit, or ask for revisions.
+3. You **see** it happen in the Files drawer.
+4. You review and ask for revisions.
 5. Repeat.
 
-## Quick Tips
+When you want a change, ask Codex to make it and review the result in Files — that keeps everything in one place.
 
-- Click files in the sidebar to open them; most viewers auto-refresh when a file changes.
-- **Obsidian:** `Cmd/Ctrl + O` to quick-search files; `Cmd/Ctrl + E` toggles edit/reading view. Remember hidden folders won't show — use Finder/Explorer when you need them.
-- **VS Code:** `Cmd/Ctrl + P` to quick-open files; the explorer shows everything, including hidden folders.
+## Optional: External Editors
 
-You don't need to master your editor right now. Just use it as a file viewer — you'll pick up features naturally as you go.
+Later, if you want a dedicated writing workspace, tools like **Obsidian** or **VS Code** can open the same course folder for direct editing. Completely optional — the Files drawer covers everything this course needs.
 
 ## What's Next
 
 Next up is **Module 1.3: First Tasks** — your first real PM work with Codex: processing messy meeting notes, synthesizing user research, transforming communications, and working with images.
 
-Start it by typing `start-1-3` in Codex, or read the reference guide:
+Start it by typing `/start 1 3` in the Codex app, or read the reference guide:
 
 **[Go to Module 1.3: First Tasks →](./first-tasks)**

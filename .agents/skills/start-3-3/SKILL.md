@@ -16,7 +16,7 @@ cp -rn .agents/skills/start-3-3/assets/* . 2>/dev/null || true
 
 Follow the bundled teaching rules in `assets/teaching-rules.md`. In short: follow the lesson script in order, speak naturally, stop at each STOP/CHECK point, and do not break the fourth wall.
 
-# 4.3 Build & Iterate
+# 3.3 Build & Iterate
 
 This is it. Time to build your quiz.
 
@@ -193,9 +193,9 @@ USER: Yes
 - Testing ideas quickly before investing in "real" development
 - Working with designers/developers - clear visual feedback speeds everything up
 
-**Next up:** In 4.4, we save your code to GitHub. Right now it only exists on your computer. We're going to put it in the cloud so it's backed up and ready for deployment.
+**Next up:** In 3.4, we save your code to GitHub. Right now it only exists on your computer. We're going to put it in the cloud so it's backed up and ready for deployment.
 
-STOP: Ready to save your work? Say "let's do GitHub" or type start-3-4
+STOP: Ready to save your work? Say "let's do GitHub" or type /start 3 4
 
 USER: Let's do GitHub
 

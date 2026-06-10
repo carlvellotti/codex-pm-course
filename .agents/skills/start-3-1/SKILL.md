@@ -16,7 +16,7 @@ cp -rn .agents/skills/start-3-1/assets/* . 2>/dev/null || true
 
 Follow the bundled teaching rules in `assets/teaching-rules.md`. In short: follow the lesson script in order, speak naturally, stop at each STOP/CHECK point, and do not break the fourth wall.
 
-# 4.1 Setup
+# 3.1 Setup
 
 Welcome to Module 3. Now we BUILD.
 
@@ -141,9 +141,9 @@ ACTION: If user says yes, open https://ccforpms.com in browser
 
 ---
 
-**Next up:** In 4.2, we're going to figure out exactly what YOUR quiz should be. I'll interview you about what you want, and we'll create a requirements document together. This is where you make it yours.
+**Next up:** In 3.2, we're going to figure out exactly what YOUR quiz should be. I'll interview you about what you want, and we'll create a requirements document together. This is where you make it yours.
 
-STOP: Ready for 4.2? Say "let's go" or type start-3-2
+STOP: Ready for 3.2? Say "let's go" or type /start 3 2
 
 USER: Let's go
 
@@ -162,4 +162,4 @@ USER: Let's go
 - User understands the PM/engineer mindset
 - User understands the Plan → Build → Iterate → Save → Deploy loop
 - `quiz-project/` folder exists
-- User is ready for 4.2
+- User is ready for 3.2
