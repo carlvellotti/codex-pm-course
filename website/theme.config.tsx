@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 export default {
   logo: <span style={{ fontWeight: 600 }}>Codex for Product Managers</span>,
   project: {
-    link: 'https://github.com/carlvellotti/codex-pm-course'
+    link: 'https://github.com/carlvellotti/free-ai-courses/tree/main/codex-pm-course'
   },
   docsRepositoryBase: 'https://github.com/carlvellotti/codex-pm-course/blob/main/website',
   feedback: {
